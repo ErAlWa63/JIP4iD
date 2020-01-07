@@ -63,6 +63,7 @@ struct ContentView: View {
                     Text("Loading...")
                 } else {
                     List(networkManager.movies.results) { movie in
+                        NavigationLink(destination: Text("Hello")) {
                         GeometryReader { geo in
                             HStack(alignment: .center) {
                                 ImageView(withURL: "https://image.tmdb.org/t/p/w500\(movie.backdropPath)")
@@ -77,8 +78,9 @@ struct ContentView: View {
                             }
                         }
                     }
+                    }
                     .environment(\.defaultMinListRowHeight, 100)
-                    .navigationBarTitle("Movie Catalog")
+                    .navigationBarTitle("Movie Catalog", displayMode: .inline)
                 }
             }
         }
