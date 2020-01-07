@@ -55,7 +55,7 @@ struct ImageView_Previews: PreviewProvider {
 
 struct ContentView: View {
     @ObservedObject var networkManager = NetworkManagerMoviePopular()
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -63,21 +63,21 @@ struct ContentView: View {
                     Text("Loading...")
                 } else {
                     List(networkManager.movies.results) { movie in
-                        NavigationLink(destination: Text("Hello")) {
-                        GeometryReader { geo in
-                            HStack(alignment: .center) {
-                                ImageView(withURL: "https://image.tmdb.org/t/p/w500\(movie.backdropPath)")
-                                    .frame(width: geo.size.width/2, height: geo.size.height/2)
-                                    .scaledToFill()
-                                    .scaleEffect(2.0)
-                                Text("\(movie.title)")
-                                    .font(.headline)
-                                    .lineLimit(nil)
-                                    .multilineTextAlignment(.leading)
-                                Spacer()
+                        NavigationLink(destination: MovieDetails(movie: movie)) {
+                            GeometryReader { geo in
+                                HStack(alignment: .center) {
+                                    ImageView(withURL: "https://image.tmdb.org/t/p/w500\(movie.backdropPath)")
+                                        .frame(width: geo.size.width/2, height: geo.size.height/2)
+                                        .scaledToFill()
+                                        .scaleEffect(2.0)
+                                    Text("\(movie.title)")
+                                        .font(.headline)
+                                        .lineLimit(nil)
+                                        .multilineTextAlignment(.leading)
+                                    Spacer()
+                                }
                             }
                         }
-                    }
                     }
                     .environment(\.defaultMinListRowHeight, 100)
                     .navigationBarTitle("Movie Catalog", displayMode: .inline)
