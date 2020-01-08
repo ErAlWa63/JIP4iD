@@ -22,6 +22,7 @@
 		71CEA19823C4958F00F75B52 /* NetworkManagerMoviePopular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEA19723C4958F00F75B52 /* NetworkManagerMoviePopular.swift */; };
 		71CEA19E23C4AE6300F75B52 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEA19D23C4AE6300F75B52 /* MovieDetails.swift */; };
 		71CEA1A023C4F33700F75B52 /* NetworkManagerMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEA19F23C4F33700F75B52 /* NetworkManagerMovie.swift */; };
+		71CEA1A223C5C76F00F75B52 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEA1A123C5C76F00F75B52 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		71CEA19723C4958F00F75B52 /* NetworkManagerMoviePopular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMoviePopular.swift; sourceTree = "<group>"; };
 		71CEA19D23C4AE6300F75B52 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		71CEA19F23C4F33700F75B52 /* NetworkManagerMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMovie.swift; sourceTree = "<group>"; };
+		71CEA1A123C5C76F00F75B52 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				71CEA15F23C3565800F75B52 /* ContentView.swift */,
 				71CEA19D23C4AE6300F75B52 /* MovieDetails.swift */,
 				71CEA18F23C3B28000F75B52 /* MoviePopular.swift */,
+				71CEA1A123C5C76F00F75B52 /* Movie.swift */,
 				71CEA18D23C3AD5C00F75B52 /* TrailerView.swift */,
 				71CEA18B23C3713500F75B52 /* WebView.swift */,
 				71CEA19723C4958F00F75B52 /* NetworkManagerMoviePopular.swift */,
@@ -297,6 +300,7 @@
 				71CEA15923C3565800F75B52 /* AppDelegate.swift in Sources */,
 				71CEA16023C3565800F75B52 /* ContentView.swift in Sources */,
 				71CEA15B23C3565800F75B52 /* SceneDelegate.swift in Sources */,
+				71CEA1A223C5C76F00F75B52 /* Movie.swift in Sources */,
 				71CEA19E23C4AE6300F75B52 /* MovieDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

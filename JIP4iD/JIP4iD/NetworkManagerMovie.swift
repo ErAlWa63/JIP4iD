@@ -10,29 +10,42 @@ import Foundation
 import Combine
 
 class NetworkManagerMovie: ObservableObject {
-    @Published var movies = MoviePopular(page: 0, results: [], totalResults: 0, totalPages: 0)
-    @Published var loading = false
-//    private var id: Int
+    @Published var movieDetails = Movie(
+        adult: false,
+        backdropPath: "",
+        belongsToCollection: nil,
+        budget: 0,
+        genres: [],
+        homepage: nil, id: nil, imdbId: nil, originalLanguage: nil, originalTitle: nil,
+        overview: "",
+        popularity: nil, posterPath: nil, productionCompanies: [], productionCountries: [],
+        releaseDate: "",
+        revenue: nil, runtime: nil, spokenLanguages: [], status: nil, tagline: nil,
+        title: "",
+        video: false, voteAverage: nil, voteCount: nil, videos: nil
+    )
+    @Published var loadingMovie = false
     private let apiUrlBaseBegin = "https://api.themoviedb.org/3/movie/"
     private let apiUrlBaseEnd = "?api_key=61ef4a247342ea9c8388ef6377a75a24&append_to_response=videos"
     init() {
-        loading = true
+        loadingMovie = true
 //        loadData()
     }
 
     func loadData(_ id: Int) {
         guard let url = URL(string: "\(apiUrlBaseBegin)\(id)\(apiUrlBaseEnd)") else { return }
-        print(url)
+
         URLSession.shared.dataTask(with: url){ (data, _, _) in
             guard let data = data else { return }
+
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 
             do {
-                let loaded = try decoder.decode(MoviePopular.self, from: data)
+                let loaded = try decoder.decode(Movie.self, from: data)
                 DispatchQueue.main.async {
-                    self.movies = loaded
-                    self.loading = false
+                    self.movieDetails = loaded
+                    self.loadingMovie = false
                     print(loaded)
                 }
             } catch let jsonErr {

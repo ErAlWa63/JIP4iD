@@ -34,7 +34,6 @@ struct ImageView: View {
     @State var image:UIImage = UIImage()
     init(withURL url:String) {
         imageLoader = ImageLoader(urlString:url)
-        print(url)
     }
     var body: some View {
         GeometryReader { geo in
