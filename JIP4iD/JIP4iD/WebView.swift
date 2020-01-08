@@ -32,7 +32,7 @@ public class WebViewStore: ObservableObject {
     }
     // Setup observers for all KVO compliant properties
     observers = [
-//      subscriber(for: \.title),
+      subscriber(for: \.title),
       subscriber(for: \.url),
       subscriber(for: \.isLoading),
       subscriber(for: \.estimatedProgress),

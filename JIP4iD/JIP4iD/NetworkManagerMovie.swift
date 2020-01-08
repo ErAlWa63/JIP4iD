@@ -22,7 +22,8 @@ class NetworkManagerMovie: ObservableObject {
         releaseDate: "",
         revenue: nil, runtime: nil, spokenLanguages: [], status: nil, tagline: nil,
         title: "",
-        video: false, voteAverage: nil, voteCount: nil, videos: nil
+        video: false, voteAverage: nil, voteCount: nil,
+        videos: Movie.Videos(results: [])
     )
     @Published var loadingMovie = false
     private let apiUrlBaseBegin = "https://api.themoviedb.org/3/movie/"
@@ -47,6 +48,15 @@ class NetworkManagerMovie: ObservableObject {
                     self.movieDetails = loaded
                     self.loadingMovie = false
                     print(loaded)
+                    print("=========================================")
+                    print(loaded.videos)
+                    print("=========================================")
+                    print(loaded.videos.results)
+                    print("=========================================")
+                    print(loaded.videos.results.count)
+                    print("=========================================")
+                    print(loaded.videos.results[0])
+
                 }
             } catch let jsonErr {
                 print("Error decoding JSON", jsonErr)

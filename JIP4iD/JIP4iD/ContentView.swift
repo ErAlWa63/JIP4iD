@@ -55,6 +55,7 @@ struct ImageView_Previews: PreviewProvider {
 struct ContentView: View {
     @ObservedObject var networkManager = NetworkManagerMoviePopular()
     @Environment(\.horizontalSizeClass) var sizeClass
+    @State private var selectedView: Int? = 0
 
     var body: some View {
         NavigationView {
@@ -63,8 +64,16 @@ struct ContentView: View {
                     Text("Loading...")
                 } else {
                     List(networkManager.movies.results) { movie in
-                        NavigationLink(destination: MovieDetails(id: movie.id)) {
+                        NavigationLink(destination: MovieDetails(id: movie.id), tag: movie.id, selection: self.$selectedView) {
                             self.movieLine("https://image.tmdb.org/t/p/w500\(movie.backdropPath)", movie.title)
+                        }
+                    }
+                    .onAppear{
+                        let device = UIDevice.current
+                        if device.model == "iPad" && device.orientation.isLandscape{
+                            self.selectedView = 1
+                        } else {
+                            self.selectedView = 0
                         }
                     }
                     .environment(\.defaultMinListRowHeight, sizeClass == .compact ? UIScreen.main.bounds.width * 3 / 10 : UIScreen.main.bounds.height / 2)

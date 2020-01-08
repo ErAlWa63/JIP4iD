@@ -33,16 +33,16 @@ struct Movie: Codable {
     }
     struct Videos: Codable {
         struct Results: Codable {
-            let id : String?
-            let iso_639_1 : String?
-            let iso_3166_1 : String?
-            let key : String?
-            let name : String?
-            let site : String?
-            let size : Int?
-            let type : String?
+            let id : String
+            let iso6391 : String
+            let iso31661 : String
+            let key : String
+            let name : String
+            let site : String
+            let size : Int
+            let type : String
         }
-        let results : [Results]?
+        let results : [Results]
     }
     let adult : Bool
     let backdropPath : String
@@ -69,4 +69,5 @@ struct Movie: Codable {
     let video : Bool?
     let voteAverage : Double?
     let voteCount : Int?
-    let videos : Videos?}
+    let videos : Videos
+}

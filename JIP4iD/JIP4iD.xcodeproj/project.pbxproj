@@ -117,11 +117,11 @@
 			children = (
 				71CEA15823C3565800F75B52 /* AppDelegate.swift */,
 				71CEA15A23C3565800F75B52 /* SceneDelegate.swift */,
+				71CEA18D23C3AD5C00F75B52 /* TrailerView.swift */,
 				71CEA15F23C3565800F75B52 /* ContentView.swift */,
 				71CEA19D23C4AE6300F75B52 /* MovieDetails.swift */,
 				71CEA18F23C3B28000F75B52 /* MoviePopular.swift */,
 				71CEA1A123C5C76F00F75B52 /* Movie.swift */,
-				71CEA18D23C3AD5C00F75B52 /* TrailerView.swift */,
 				71CEA18B23C3713500F75B52 /* WebView.swift */,
 				71CEA19723C4958F00F75B52 /* NetworkManagerMoviePopular.swift */,
 				71CEA19F23C4F33700F75B52 /* NetworkManagerMovie.swift */,
