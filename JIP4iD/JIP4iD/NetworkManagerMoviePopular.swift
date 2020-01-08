@@ -30,7 +30,6 @@ class NetworkManagerMoviePopular: ObservableObject {
                 DispatchQueue.main.async {
                     self.movies = loaded
                     self.loading = false
-                    print(loaded)
                 }
             } catch let jsonErr {
                 print("Error decoding JSON", jsonErr)
