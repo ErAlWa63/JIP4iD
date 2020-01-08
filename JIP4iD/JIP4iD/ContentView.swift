@@ -64,7 +64,7 @@ struct ContentView: View {
                     Text("Loading...")
                 } else {
                     List(networkManager.movies.results) { movie in
-                        NavigationLink(destination: MovieDetails(movie: movie)) {
+                        NavigationLink(destination: MovieDetails(id: movie.id)) {
                             self.movieLine("https://image.tmdb.org/t/p/w500\(movie.backdropPath)", movie.title)
                         }
                     }
