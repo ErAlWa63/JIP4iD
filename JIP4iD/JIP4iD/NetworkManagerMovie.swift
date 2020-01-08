@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  NetworkManagerMovie.swift
 //  JIP4iD
 //
 //  Created by Erik Waterham on 07/01/2020.
@@ -9,17 +9,21 @@
 import Foundation
 import Combine
 
-class NetworkManagerMoviePopular: ObservableObject {
+class NetworkManagerMovie: ObservableObject {
     @Published var movies = MoviePopular(page: 0, results: [], totalResults: 0, totalPages: 0)
     @Published var loading = false
-    private let api_url_base = "https://api.themoviedb.org/3/movie/popular?api_key=61ef4a247342ea9c8388ef6377a75a24"
-    init() {
+    private var id: Int
+    private let apiUrlBaseBegin = "https://api.themoviedb.org/3/movie/"
+    private let apiUrlBaseEnd = "?api_key=61ef4a247342ea9c8388ef6377a75a24&append_to_response=videos"
+    init(id: Int) {
+        self.id = id
         loading = true
         loadData()
     }
 
     private func loadData() {
-        guard let url = URL(string: "\(api_url_base)") else { return }
+        guard let url = URL(string: "\(apiUrlBaseBegin)\(id)\(apiUrlBaseEnd)") else { return }
+        print(url)
         URLSession.shared.dataTask(with: url){ (data, _, _) in
             guard let data = data else { return }
             let decoder = JSONDecoder()

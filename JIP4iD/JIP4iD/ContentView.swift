@@ -34,13 +34,13 @@ struct ImageView: View {
     @State var image:UIImage = UIImage()
     init(withURL url:String) {
         imageLoader = ImageLoader(urlString:url)
+        print(url)
     }
     var body: some View {
         GeometryReader { geo in
             VStack {
                 Image(uiImage: self.image)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
             }.onReceive(self.imageLoader.dataPublisher) { data in
                 self.image = UIImage(data: data) ?? UIImage()
             }
@@ -55,7 +55,8 @@ struct ImageView_Previews: PreviewProvider {
 
 struct ContentView: View {
     @ObservedObject var networkManager = NetworkManagerMoviePopular()
-    
+    @Environment(\.horizontalSizeClass) var sizeClass
+
     var body: some View {
         NavigationView {
             VStack {
@@ -64,26 +65,42 @@ struct ContentView: View {
                 } else {
                     List(networkManager.movies.results) { movie in
                         NavigationLink(destination: MovieDetails(movie: movie)) {
-                            GeometryReader { geo in
-                                HStack(alignment: .center) {
-                                    ImageView(withURL: "https://image.tmdb.org/t/p/w500\(movie.backdropPath)")
-                                        .frame(width: geo.size.width/2, height: geo.size.height/2)
-                                        .scaledToFill()
-                                        .scaleEffect(2.0)
-                                    Text("\(movie.title)")
-                                        .font(.headline)
-                                        .lineLimit(nil)
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
-                                }
-                            }
+                            self.movieLine("https://image.tmdb.org/t/p/w500\(movie.backdropPath)", movie.title)
                         }
                     }
-                    .environment(\.defaultMinListRowHeight, 100)
-                    .navigationBarTitle("Movie Catalog", displayMode: .inline)
+                    .environment(\.defaultMinListRowHeight, sizeClass == .compact ? UIScreen.main.bounds.width * 3 / 10 : UIScreen.main.bounds.height / 2)
                 }
             }
+            .navigationBarTitle("Movie Catalog", displayMode: .inline)
         }
+    }
+
+    func movieLine(_ url: String, _ title: String) -> some View {
+        GeometryReader { geo in
+            self.movieLineItems(geo, url, title)
+        }
+
+    }
+
+    func movieLineItems(_ proxy: GeometryProxy, _ url: String, _ title: String) -> some View {
+        HStack(alignment: .center) {
+            self.moviePoster(proxy, url)
+            self.movieTitle(title)
+            Spacer()
+        }
+    }
+
+    func moviePoster(_ proxy: GeometryProxy, _ url: String ) -> some View {
+        ImageView(withURL: url)
+            .frame(width: proxy.size.width/2, height: proxy.size.height)
+            .aspectRatio(contentMode: .fit)
+    }
+
+    func movieTitle( _ title: String) -> some View {
+        Text(title)
+            .font(.headline)
+            .lineLimit(nil)
+            .multilineTextAlignment(.leading)
     }
 }
 

@@ -11,22 +11,53 @@ import SwiftUI
 //import URLImage
 let BASE_IMAGE_URL = "https://image.tmdb.org/t/p/original/"
 struct MovieDetails : View {
+//    @ObservedObject var networkManager = NetworkManagerMovie()
+
     var movie: MoviePopular.Results
     var body: some View {
+//        ScrollView {
         GeometryReader { geo in
             VStack {
                 ImageView(withURL: "https://image.tmdb.org/t/p/w500\(self.movie.backdropPath)")
-                    .frame(width: geo.size.width/2, height: geo.size.height/2)
-                    .scaledToFill()
-                    .scaleEffect(2.0)
+                    .frame(minWidth: UIScreen.main.bounds.width, minHeight: UIScreen.main.bounds.height/3)
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: geo.size.width)
+//                    .aspectRatio(contentMode: .fill)
+//                    .frame(width: geo.size.width/2, height: geo.size.height/2)
+                    .scaledToFit()
+//                    .scaleEffect(2.0)
+                    .background(Color.red)
                 HStack {
-                    Text("Description").foregroundColor(.gray)
+                    Text("\(self.movie.title)")
+                        .font(.title)
+                        .lineLimit(nil)
+                        .multilineTextAlignment(.leading)
                     Spacer()
                 }
+                Button(action: {}) {Text("Watch Trailer")}
+                    .frame(width: geo.size.width - 30, height: 40, alignment: .center)
+                    .background(Color("myLightGray"))
+                .foregroundColor(.black)
+                HStack {
+                    Text("Genres")
+                        .font(.headline)
+                    Spacer()
+                }
+                HStack {
+                    Text("Action, Thriller and Science Fiction")
+                    Spacer()
+                }
+                HStack {
+                    Text("Date")
+                        .font(.headline)
+                    Spacer()
+                }
+                Text("27.04.2016")
                 Text(self.movie.overview).lineLimit(nil)
                 Spacer()
             }.navigationBarTitle(Text("Movie Detail"), displayMode: .inline)
                 .padding()
         }
+//        }
     }
 }

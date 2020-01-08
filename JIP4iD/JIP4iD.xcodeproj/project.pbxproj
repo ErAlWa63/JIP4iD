@@ -21,6 +21,7 @@
 		71CEA19023C3B28000F75B52 /* MoviePopular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEA18F23C3B28000F75B52 /* MoviePopular.swift */; };
 		71CEA19823C4958F00F75B52 /* NetworkManagerMoviePopular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEA19723C4958F00F75B52 /* NetworkManagerMoviePopular.swift */; };
 		71CEA19E23C4AE6300F75B52 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEA19D23C4AE6300F75B52 /* MovieDetails.swift */; };
+		71CEA1A023C4F33700F75B52 /* NetworkManagerMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEA19F23C4F33700F75B52 /* NetworkManagerMovie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		71CEA18F23C3B28000F75B52 /* MoviePopular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePopular.swift; sourceTree = "<group>"; };
 		71CEA19723C4958F00F75B52 /* NetworkManagerMoviePopular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMoviePopular.swift; sourceTree = "<group>"; };
 		71CEA19D23C4AE6300F75B52 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		71CEA19F23C4F33700F75B52 /* NetworkManagerMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMovie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				71CEA18D23C3AD5C00F75B52 /* TrailerView.swift */,
 				71CEA18B23C3713500F75B52 /* WebView.swift */,
 				71CEA19723C4958F00F75B52 /* NetworkManagerMoviePopular.swift */,
+				71CEA19F23C4F33700F75B52 /* NetworkManagerMovie.swift */,
 				71CEA16123C3565900F75B52 /* Assets.xcassets */,
 				71CEA16623C3565900F75B52 /* LaunchScreen.storyboard */,
 				71CEA16923C3565900F75B52 /* Info.plist */,
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71CEA15E23C3565800F75B52 /* JIP4iD.xcdatamodeld in Sources */,
+				71CEA1A023C4F33700F75B52 /* NetworkManagerMovie.swift in Sources */,
 				71CEA19823C4958F00F75B52 /* NetworkManagerMoviePopular.swift in Sources */,
 				71CEA18C23C3713500F75B52 /* WebView.swift in Sources */,
 				71CEA18E23C3AD5C00F75B52 /* TrailerView.swift in Sources */,
