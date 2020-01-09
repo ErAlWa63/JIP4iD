@@ -35,8 +35,8 @@ struct MovieDetails : View {
                                 }
                                 VStack {
                                     self.movieTitle()
-                                    Spacer()
                                     self.movieButtonTrailer(geo, self.isLandscape(), self.networkManager.movieDetails.videos.results.count)
+                                    Spacer()
                                 }
                                 .padding([.leading, .trailing])
                             }
