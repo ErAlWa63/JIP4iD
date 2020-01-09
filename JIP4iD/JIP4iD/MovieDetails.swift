@@ -71,14 +71,11 @@ struct MovieDetails : View {
             .padding(.bottom)
     }
 
-
-
     func movieTitle() -> some View {
         HStack() {
             Text(networkManager.movieDetails.title)
                 .font(.headline)
-                .lineLimit(nil)
-                .multilineTextAlignment(.leading)
+                .fixedSize(horizontal: false, vertical: true)
             Spacer()
         }
         .padding(.bottom)
