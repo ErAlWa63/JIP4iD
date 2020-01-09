@@ -101,9 +101,7 @@ struct MovieDetails : View {
     }
 
     func movieReleaseDate() -> some View {
-        print(networkManager.movieDetails.releaseDate)
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let date = dateFormatter.date(from: networkManager.movieDetails.releaseDate)!
         dateFormatter.dateFormat = "dd.MM.yyyy"
