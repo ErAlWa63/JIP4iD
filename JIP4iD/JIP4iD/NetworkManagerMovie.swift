@@ -25,12 +25,13 @@ class NetworkManagerMovie: ObservableObject {
         video: false, voteAverage: nil, voteCount: nil,
         videos: Movie.Videos(results: [])
     )
-    @Published var loadingMovie = false
+    @Published var loadingMovie = true
+
     private let apiUrlBaseBegin = "https://api.themoviedb.org/3/movie/"
     private let apiUrlBaseEnd = "?api_key=61ef4a247342ea9c8388ef6377a75a24&append_to_response=videos"
+
     init() {
         loadingMovie = true
-//        loadData()
     }
 
     func loadData(_ id: Int) {
@@ -47,16 +48,6 @@ class NetworkManagerMovie: ObservableObject {
                 DispatchQueue.main.async {
                     self.movieDetails = loaded
                     self.loadingMovie = false
-                    print(loaded)
-                    print("=========================================")
-                    print(loaded.videos)
-                    print("=========================================")
-                    print(loaded.videos.results)
-                    print("=========================================")
-                    print(loaded.videos.results.count)
-                    print("=========================================")
-//                    print(loaded.videos.results[0])
-
                 }
             } catch let jsonErr {
                 print("NetworkManagerMovie Error decoding JSON", jsonErr)

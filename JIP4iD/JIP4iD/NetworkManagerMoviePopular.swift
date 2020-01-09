@@ -31,7 +31,7 @@ class NetworkManagerMoviePopular: ObservableObject {
                     self.loading = false
                 }
             } catch let jsonErr {
-                print("Error decoding JSON", jsonErr)
+                print("NetworkManagerMoviePopular Error decoding JSON", jsonErr)
             }
             return
         }.resume()
