@@ -101,8 +101,7 @@ struct MovieDetails : View {
     }
 
     func moviePoster(_ proxy: GeometryProxy, _ isLandscape: Bool, _ url: String ) -> some View {
-        print("proxy = \(proxy.size)")
-        return ImageView(withURL: url)
+        ImageView(withURL: url)
             .frame(minWidth: isLandscape ? proxy.size.width / 2 : proxy.size.width, minHeight: proxy.size.height/3)
             .aspectRatio(contentMode: .fit)
             .padding(.bottom)
