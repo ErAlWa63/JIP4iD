@@ -66,7 +66,7 @@ struct Movie: Codable {
     let status : String?
     let tagline : String?
     let title : String
-    let video : Bool?
+    let video : Bool
     let voteAverage : Double?
     let voteCount : Int?
     let videos : Videos

@@ -6,62 +6,67 @@
 //  Copyright © 2020 Erik Waterham. All rights reserved.
 //
 
-//import Foundation
 import SwiftUI
-//import URLImage
-let BASE_IMAGE_URL = "https://image.tmdb.org/t/p/original/"
+
 struct MovieDetails : View {
     @ObservedObject var networkManager = NetworkManagerMovie()
     @State var showingDetail = false
 
     var id: Int
-    //    var movie: MoviePopular.Results
+
     var body: some View {
         VStack {
             if networkManager.loadingMovie {
                 Text("Loading...")
             } else {
-
-                //        ScrollView {
-
+                //                ScrollView {
                 GeometryReader { geo in
                     VStack {
-                        self.moviePoster("https://image.tmdb.org/t/p/w500\(self.networkManager.movieDetails.backdropPath)")
+                        self.moviePoster(geo, "https://image.tmdb.org/t/p/w500\(self.networkManager.movieDetails.backdropPath)")
                         VStack {
                             self.movieTitle()
                             VStack {
                                 Button(action: {
                                     self.showingDetail.toggle()
                                 }) {
-                                    Text("Watch Trailer")}
+                                    if self.networkManager.movieDetails.videos.results.count == 0 {
+                                        Text("No Trailer")
+                                    } else {
+                                        Text("Watch Trailer")}
+                                }
                                     .frame(width: geo.size.width - 30, height: 40, alignment: .center)
                                     .background(Color("myLightGray"))
                                     .foregroundColor(.black)
+
+                                }
+                            .disabled(self.networkManager.movieDetails.videos.results.count == 0)
+                                .sheet(isPresented: self.$showingDetail) {
+                                    TrailerView(key: self.networkManager.movieDetails.videos.results[0].key)
+                                    //                                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/8, alignment: .center)
+                                    .aspectRatio(contentMode: .fit)
+                                }
+                                .padding(.bottom)
+                                self.movieGenres()
+                                self.movieReleaseDate()
+                                self.movieOverview()
                             }
-                            .sheet(isPresented: self.$showingDetail) {
-//                                TrailerView(item: "P6AaSMfXHbA")
-                                TrailerView(key: self.networkManager.movieDetails.videos.results[0].key)
-                            }
-                            .padding(.bottom)
-                            self.movieGenres()
-                            self.movieReleaseDate()
-                            self.movieOverview()
+                            .padding([.leading, .trailing])
                         }
-                        .padding([.leading, .trailing])
-                        Spacer()
-                    }.navigationBarTitle(Text("Movie Detail"), displayMode: .inline)
+                        .frame(width: geo.size.width, height: geo.size.height)
+                        .navigationBarTitle(Text("Movie Detail"), displayMode: .inline)
                         .padding()
+                    }
                 }
             }
-        }
-        .onAppear {
-            self.networkManager.loadData(self.id)
+            //        }
+            .onAppear {
+                self.networkManager.loadData(self.id)
         }
     }
 
-    func moviePoster(_ url: String ) -> some View {
+    func moviePoster(_ proxy: GeometryProxy, _ url: String ) -> some View {
         ImageView(withURL: url)
-            .frame(minWidth: UIScreen.main.bounds.width, minHeight: UIScreen.main.bounds.height/3)
+            .frame(minWidth: proxy.size.width, minHeight: proxy.size.height/3)
             .aspectRatio(contentMode: .fit)
             .padding(.bottom)
     }
@@ -96,12 +101,12 @@ struct MovieDetails : View {
     }
 
     func movieReleaseDate() -> some View {
-                print(networkManager.movieDetails.releaseDate)
-                let dateFormatter = DateFormatter()
-                dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                let date = dateFormatter.date(from: networkManager.movieDetails.releaseDate)!
-                dateFormatter.dateFormat = "dd.MM.yyyy"
+        print(networkManager.movieDetails.releaseDate)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: networkManager.movieDetails.releaseDate)!
+        dateFormatter.dateFormat = "dd.MM.yyyy"
         return VStack {
             HStack() {
                 Text("Date")
@@ -127,6 +132,10 @@ struct MovieDetails : View {
             HStack() {
                 Text(networkManager.movieDetails.overview)
                     .font(.footnote)
+                    .fixedSize(horizontal: false, vertical: true)
+                //                    .lineLimit(nil)
+                //                    .multilineTextAlignment(.leading)
+
                 Spacer()
             }
         }

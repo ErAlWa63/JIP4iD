@@ -55,7 +55,7 @@ class NetworkManagerMovie: ObservableObject {
                     print("=========================================")
                     print(loaded.videos.results.count)
                     print("=========================================")
-                    print(loaded.videos.results[0])
+//                    print(loaded.videos.results[0])
 
                 }
             } catch let jsonErr {

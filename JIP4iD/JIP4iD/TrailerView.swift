@@ -17,7 +17,11 @@ struct TrailerView: View {
 
     var body: some View {
         NavigationView {
+            VStack {
             WebView(webView: webViewStore.webView)
+                Spacer()
+            }
+//                .frame(width: 300, height: 300, alignment: .center)
                 .navigationBarTitle(Text(""), displayMode: .inline)
                 .navigationBarItems(trailing: Button(action: { self.presentationMode.wrappedValue.dismiss() }) { Text("Done") })
         }
