@@ -11,7 +11,6 @@ import SwiftUI
 struct MovieDetails : View {
     @ObservedObject var networkManager = NetworkManagerMovie()
     @State var showingDetail = false
-    @State var rotating = UIScreen.main.bounds.width > UIScreen.main.bounds.height
 
     var id: Int
 
