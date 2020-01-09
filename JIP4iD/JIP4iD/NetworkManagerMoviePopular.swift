@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Combine
 
 class NetworkManagerMoviePopular: ObservableObject {
     @Published var movies = MoviePopular(page: 0, results: [], totalResults: 0, totalPages: 0)
