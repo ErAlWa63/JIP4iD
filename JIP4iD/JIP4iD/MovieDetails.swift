@@ -11,6 +11,7 @@ import SwiftUI
 struct MovieDetails : View {
     @ObservedObject var networkManager = NetworkManagerMovie()
     @State var showingDetail = false
+    @State var rotating = UIScreen.main.bounds.width > UIScreen.main.bounds.height
 
     var id: Int
 
@@ -19,36 +20,43 @@ struct MovieDetails : View {
             if networkManager.loadingMovie {
                 Text("Loading...")
             } else {
-                //                ScrollView {
-                GeometryReader { geo in
-                    VStack {
-                        self.moviePoster(geo, "https://image.tmdb.org/t/p/w500\(self.networkManager.movieDetails.backdropPath)")
+                if isLandscape() {
+                    GeometryReader { geo in
                         VStack {
-                            self.movieTitle()
+                            HStack {
+                                VStack {
+                                    self.moviePoster(geo, self.isLandscape(), "https://image.tmdb.org/t/p/w500\(self.networkManager.movieDetails.backdropPath)")
+                                    VStack {
+                                        self.movieGenres()
+                                        self.movieReleaseDate()
+                                        self.movieOverview()
+                                        Spacer()
+                                    }
+                                    .padding([.leading, .trailing])
+                                }
+                                VStack {
+                                    self.movieTitle()
+                                    Spacer()
+                                    self.movieButtonTrailer(geo, self.isLandscape(), self.networkManager.movieDetails.videos.results.count)
+                                }
+                                .padding([.leading, .trailing])
+                            }
+                            .frame(width: geo.size.width, height: geo.size.height)
+                        }
+                        .navigationBarTitle(Text("Movie Detail"), displayMode: .inline)
+                        .padding()
+                    }
+                } else {
+                    GeometryReader { geo in
+                        VStack {
+                            self.moviePoster(geo, self.isLandscape(), "https://image.tmdb.org/t/p/w500\(self.networkManager.movieDetails.backdropPath)")
                             VStack {
-                                Button(action: {
-                                    self.showingDetail.toggle()
-                                }) {
-                                    if self.networkManager.movieDetails.videos.results.count == 0 {
-                                        Text("No Trailer")
-                                    } else {
-                                        Text("Watch Trailer")}
-                                }
-                                    .frame(width: geo.size.width - 30, height: 40, alignment: .center)
-                                    .background(Color("myLightGray"))
-                                    .foregroundColor(.black)
-
-                                }
-                            .disabled(self.networkManager.movieDetails.videos.results.count == 0)
-                                .sheet(isPresented: self.$showingDetail) {
-                                    TrailerView(key: self.networkManager.movieDetails.videos.results[0].key)
-                                    //                                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/8, alignment: .center)
-                                    .aspectRatio(contentMode: .fit)
-                                }
-                                .padding(.bottom)
+                                self.movieTitle()
+                                self.movieButtonTrailer(geo, self.isLandscape(), self.networkManager.movieDetails.videos.results.count)
                                 self.movieGenres()
                                 self.movieReleaseDate()
                                 self.movieOverview()
+                                Spacer()
                             }
                             .padding([.leading, .trailing])
                         }
@@ -58,15 +66,45 @@ struct MovieDetails : View {
                     }
                 }
             }
-            //        }
-            .onAppear {
-                self.networkManager.loadData(self.id)
+        }
+        .onAppear {
+            self.networkManager.loadData(self.id)
         }
     }
 
-    func moviePoster(_ proxy: GeometryProxy, _ url: String ) -> some View {
-        ImageView(withURL: url)
-            .frame(minWidth: proxy.size.width, minHeight: proxy.size.height/3)
+    func isLandscape() -> Bool {
+        UIScreen.main.bounds.width > UIScreen.main.bounds.height
+    }
+
+    func movieButtonTrailer(_ proxy: GeometryProxy, _ isLandscape: Bool, _ videoCount: Int ) -> some View {
+        Button(action: { self.showingDetail.toggle() }) {
+            if videoCount == 0 {
+                Text("No Trailer")
+            } else {
+                Text("Watch Trailer")
+
+            }
+        }
+        .frame(width: isLandscape ? (proxy.size.width - 60) / 2 : proxy.size.width, height: 40, alignment: .center)
+        .background(Color("myLightGray"))
+        .foregroundColor(.black)
+        .disabled(videoCount == 0)
+        .sheet(isPresented: self.$showingDetail) {
+            self.movieTrailerView(proxy, self.networkManager.movieDetails.videos.results[0].key)
+        }
+        .padding(.bottom)
+    }
+
+    func movieTrailerView(_ proxy: GeometryProxy, _ key: String ) -> some View {
+        TrailerView(key: key)
+            .frame(width: proxy.size.width, height: proxy.size.height, alignment: .center)
+            .aspectRatio(contentMode: .fit)
+    }
+
+    func moviePoster(_ proxy: GeometryProxy, _ isLandscape: Bool, _ url: String ) -> some View {
+        print("proxy = \(proxy.size)")
+        return ImageView(withURL: url)
+            .frame(minWidth: isLandscape ? proxy.size.width / 2 : proxy.size.width, minHeight: proxy.size.height/3)
             .aspectRatio(contentMode: .fit)
             .padding(.bottom)
     }

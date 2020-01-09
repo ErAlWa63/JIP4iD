@@ -10,8 +10,8 @@ struct Movie: Codable {
     struct BelongsToCollection: Codable, Identifiable {
         let id: Int
         let name: String
-        let posterPath: String
-        let backdropPath: String
+        let posterPath: String?
+        let backdropPath: String?
     }
     struct Genres: Codable, Identifiable {
         let id : Int

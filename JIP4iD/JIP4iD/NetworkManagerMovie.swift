@@ -59,7 +59,7 @@ class NetworkManagerMovie: ObservableObject {
 
                 }
             } catch let jsonErr {
-                print("Error decoding JSON", jsonErr)
+                print("NetworkManagerMovie Error decoding JSON", jsonErr)
             }
             return
         }.resume()
