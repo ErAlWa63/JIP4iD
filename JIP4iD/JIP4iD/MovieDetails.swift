@@ -133,9 +133,6 @@ struct MovieDetails : View {
                 Text(networkManager.movieDetails.overview)
                     .font(.footnote)
                     .fixedSize(horizontal: false, vertical: true)
-                //                    .lineLimit(nil)
-                //                    .multilineTextAlignment(.leading)
-
                 Spacer()
             }
         }
