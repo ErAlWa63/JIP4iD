@@ -18,7 +18,7 @@ struct TrailerView: View {
     var body: some View {
         NavigationView {
             VStack {
-                WebView(webView: webViewStore.webView)
+                WebView(url: URL(string: "https://www.youtube.com/embed/\(self.key)")!)
                 Spacer()
             }
             .navigationBarTitle(Text(""), displayMode: .inline)

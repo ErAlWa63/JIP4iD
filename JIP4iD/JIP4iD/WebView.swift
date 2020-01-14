@@ -9,23 +9,31 @@
 import SwiftUI
 import WebKit
 
-public struct WebView: View, UIViewRepresentable {
-    public let webView: WKWebView
+public struct WebView: UIViewRepresentable {
+    let url: URL
 
-    public typealias UIViewType = UIViewContainerView<WKWebView>
-
-    public init(webView: WKWebView) {
-        self.webView = webView
+    public func makeUIView(context: Context) -> WKWebView {
+        let view = WKWebView()
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return view
     }
 
-    public func makeUIView(context: UIViewRepresentableContext<WebView>) -> WebView.UIViewType {
-        return UIViewContainerView()
+    public func updateUIView(_ uiView: WKWebView, context: Context) {
+        guard context.coordinator.needsToLoadURL else { return }
+        uiView.load(URLRequest(url: url))
     }
 
-    public func updateUIView(_ uiView: WebView.UIViewType, context: UIViewRepresentableContext<WebView>) {
-        if uiView.contentView !== webView {
-            uiView.contentView = webView
-        }
+    public func makeCoordinator() -> WebView.Coordinator {
+        Coordinator()
+    }
+
+    public class Coordinator {
+        var needsToLoadURL = true
     }
 }
 
+struct WebKitView_Previews: PreviewProvider {
+    static var previews: some View {
+        WebView(url: URL(string: "...")!)
+    }
+}
