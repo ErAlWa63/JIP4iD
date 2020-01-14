@@ -109,7 +109,7 @@ struct MovieDetails: View {
     }
 
     func movieTitle() -> some View {
-        HStack() {
+        HStack {
             Text(networkManager.movieDetails.title)
                 .font(.headline)
                 .fixedSize(horizontal: false, vertical: true)
@@ -120,12 +120,12 @@ struct MovieDetails: View {
 
     func movieGenres() -> some View {
         VStack {
-            HStack() {
+            HStack {
                 Text("Genres")
                     .font(.headline)
                 Spacer()
             }
-            HStack() {
+            HStack {
                 Text(networkManager.movieDetails.genres.map{$0.name}.joined(separator: ", "))
                     .font(.footnote)
                 Spacer()
@@ -140,12 +140,12 @@ struct MovieDetails: View {
         let date = dateFormatter.date(from: networkManager.movieDetails.releaseDate)!
         dateFormatter.dateFormat = "dd.MM.yyyy"
         return VStack {
-            HStack() {
+            HStack {
                 Text("Date")
                     .font(.headline)
                 Spacer()
             }
-            HStack() {
+            HStack {
                 Text(dateFormatter.string(from: date))
                     .font(.footnote)
                 Spacer()
@@ -156,12 +156,12 @@ struct MovieDetails: View {
 
     func movieOverview() -> some View {
         VStack {
-            HStack() {
+            HStack {
                 Text("Overview")
                     .font(.headline)
                 Spacer()
             }
-            HStack() {
+            HStack {
                 Text(networkManager.movieDetails.overview)
                     .font(.footnote)
                     .fixedSize(horizontal: false, vertical: true)
