@@ -17,7 +17,7 @@ struct MovieCatalogView: View {
             NavigationView {
                 VStack {
                     if networkManager.loading {
-                        Text("Loading...")
+                        NoDataAvailableView()
                     } else {
                         List(networkManager.movies.results) { movie in
                                 NavigationLink(destination: MovieDetails(id: movie.id)) {
