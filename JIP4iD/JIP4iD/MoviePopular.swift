@@ -7,7 +7,9 @@
 //
 
 struct MoviePopular: Codable {
+
     struct Results: Codable, Identifiable {
+
         let popularity: Double
         let voteCount: Int
         let video: Bool
@@ -23,6 +25,7 @@ struct MoviePopular: Codable {
         let overview: String
         let releaseDate: String
     }
+    
     let page: Int
     let results: [Results]
     let totalResults: Int

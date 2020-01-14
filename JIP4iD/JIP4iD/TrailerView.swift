@@ -10,6 +10,7 @@ import SwiftUI
 import WebKit
 
 struct TrailerView: View {
+
     @ObservedObject var webViewStore = WebViewStore()
     @Environment(\.presentationMode) var presentationMode
 

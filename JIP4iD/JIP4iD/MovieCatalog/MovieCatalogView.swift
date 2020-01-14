@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct MovieCatalogView: View {
+    
         @ObservedObject var networkManager = NetworkManagerMoviePopular()
         @Environment(\.horizontalSizeClass) var horizontalSizeClass
         @Environment(\.verticalSizeClass) var verticalSizeClass

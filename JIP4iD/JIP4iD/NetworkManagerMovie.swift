@@ -10,6 +10,7 @@ import Foundation
 import Combine
 
 class NetworkManagerMovie: ObservableObject {
+    
     @Published var movieDetails = Movie(
         adult: false,
         backdropPath: "",
@@ -31,10 +32,12 @@ class NetworkManagerMovie: ObservableObject {
     private let apiUrlBaseEnd = "?api_key=61ef4a247342ea9c8388ef6377a75a24&append_to_response=videos"
 
     init() {
+
         loadingMovie = true
     }
 
     func loadData(_ id: Int) {
+        
         guard let url = URL(string: "\(apiUrlBaseBegin)\(id)\(apiUrlBaseEnd)") else { return }
 
         URLSession.shared.dataTask(with: url){ (data, _, _) in
