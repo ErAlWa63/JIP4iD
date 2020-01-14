@@ -196,6 +196,7 @@
 				71CEA15123C3565800F75B52 /* Sources */,
 				71CEA15223C3565800F75B52 /* Frameworks */,
 				71CEA15323C3565800F75B52 /* Resources */,
+				71B8059423CDFE0C00554115 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -311,6 +312,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		71B8059423CDFE0C00554115 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint >/dev/null; then\n  pwd\n#    swiftlint --config \"$SRCROOT/.swiftlint.yml\"\n    swiftlint > swiftlint.txt\n    cat swiftlint.txt | sed -e 's/warning/;warning/' | sort -t ';' -k 2 -k 1 | sed 's/;//'\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n  fi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		71CEA15123C3565800F75B52 /* Sources */ = {
