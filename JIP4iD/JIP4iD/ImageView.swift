@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ImageView: View {
+    
     @ObservedObject var imageLoader: ImageLoader
     @State var image: UIImage = UIImage()
     init(withURL url: String) {

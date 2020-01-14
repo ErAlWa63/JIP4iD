@@ -170,6 +170,11 @@ file_header:
                     import
 
 custom_rules:
+  empty_first_line: # https://github.com/brandenr/swiftlintconfig/blob/master/.swiftlint.yml
+    name: "Empty First Line"
+    regex: '(^[ a-zA-Z ]*(?:protocol|extension|class|struct) (?!(?:var|let))[ a-zA-Z:]*\{\n *\S+)'
+    message: "There should be an empty line after a declaration"
+    severity: warning
   comments_capitalized_find_possible_code: # https://github.com/brandenr/swiftlintconfig/blob/master/.swiftlint.yml
     name: "Catch Commented Out Code"
     regex: '(^ *// +(?!swiftlint)[a-z]+)'
@@ -198,11 +203,6 @@ custom_rules:
     regex: '([a-z,A-Z] \s+)'
     message: "Double space between keywords"
     match_kinds: keyword
-    severity: warning
-  empty_first_line: # https://github.com/brandenr/swiftlintconfig/blob/master/.swiftlint.yml
-    name: "Empty First Line"
-    regex: '(^[ a-zA-Z ]*(?:protocol|extension|class|struct) (?!(?:var|let))[ a-zA-Z:]*\{\n *\S+)'
-    message: "There should be an empty line after a declaration"
     severity: warning
   empty_line_after_guard: # https://github.com/brandenr/swiftlintconfig/blob/master/.swiftlint.yml
     name: "Empty Line After Guard"

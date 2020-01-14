@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 
 class ImageLoader: ObservableObject {
+    
     var dataPublisher = PassthroughSubject<Data, Never>()
     var data = Data() {
         didSet {

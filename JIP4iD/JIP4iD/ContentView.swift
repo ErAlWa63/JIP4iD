@@ -11,6 +11,7 @@ import Foundation
 import Combine
 
 struct ContentView: View {
+    
     var body: some View {
         MovieCatalogView()
     }

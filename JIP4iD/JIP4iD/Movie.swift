@@ -7,32 +7,44 @@
 //
 
 struct Movie: Codable {
+
     struct BelongsToCollection: Codable, Identifiable {
         let id: Int
         let name: String
         let posterPath: String?
         let backdropPath: String?
     }
+
     struct Genres: Codable, Identifiable {
+
         let id: Int
         let name: String
     }
+
     struct ProductionCompanies: Codable, Identifiable {
+
         let id: Int
         let logoPath: String?
         let name: String
         let originCountry: String
     }
+
     struct ProductionCountries: Codable {
+
         let iso31661: String
         let name: String
     }
+
     struct SpokenLanguages: Codable {
+
         let iso_639_1: String?
         let name: String?
     }
+
     struct Videos: Codable {
+
         struct Results: Codable {
+
             let id: String
             let iso6391: String
             let iso31661: String
@@ -42,8 +54,10 @@ struct Movie: Codable {
             let size: Int
             let type: String
         }
+
         let results: [Results]
     }
+    
     let adult: Bool
     let backdropPath: String
     let belongsToCollection: BelongsToCollection?
