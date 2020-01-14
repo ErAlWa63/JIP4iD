@@ -9,10 +9,10 @@
 import SwiftUI
 
 struct ImageView: View {
-    @ObservedObject var imageLoader:ImageLoader
-    @State var image:UIImage = UIImage()
-    init(withURL url:String) {
-        imageLoader = ImageLoader(urlString:url)
+    @ObservedObject var imageLoader: ImageLoader
+    @State var image: UIImage = UIImage()
+    init(withURL url: String) {
+        imageLoader = ImageLoader(urlString: url)
     }
     var body: some View {
         GeometryReader { geo in

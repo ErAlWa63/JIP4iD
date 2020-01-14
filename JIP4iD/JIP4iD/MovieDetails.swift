@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct MovieDetails : View {
+struct MovieDetails: View {
     @ObservedObject var networkManager = NetworkManagerMovie()
     @State var showingDetail = false
 

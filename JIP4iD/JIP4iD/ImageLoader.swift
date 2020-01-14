@@ -16,7 +16,7 @@ class ImageLoader: ObservableObject {
             dataPublisher.send(data)
         }
     }
-    init(urlString:String) {
+    init(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else { return }
