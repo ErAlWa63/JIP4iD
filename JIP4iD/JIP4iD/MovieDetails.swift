@@ -126,7 +126,7 @@ struct MovieDetails: View {
                 Spacer()
             }
             HStack {
-                Text(networkManager.movieDetails.genres.map{$0.name}.joined(separator: ", "))
+                Text(networkManager.movieDetails.genres.map{ $0.name }.joined(separator: ", "))
                     .font(.footnote)
                 Spacer()
             }
