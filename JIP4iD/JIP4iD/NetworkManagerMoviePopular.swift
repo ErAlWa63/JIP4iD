@@ -12,14 +12,14 @@ class NetworkManagerMoviePopular: ObservableObject {
     
     @Published var movies = MoviePopular(page: 0, results: [], totalResults: 0, totalPages: 0)
     @Published var loading = true
-    private let api_url_base = "https://api.themoviedb.org/3/movie/popular?api_key=61ef4a247342ea9c8388ef6377a75a24"
+    private let apiUrlBase = "https://api.themoviedb.org/3/movie/popular?api_key=61ef4a247342ea9c8388ef6377a75a24"
     init() {
         loading = true
         loadData()
     }
 
     private func loadData() {
-        guard let url = URL(string: "\(api_url_base)") else {
+        guard let url = URL(string: "\(apiUrlBase)") else {
             return
         }
         

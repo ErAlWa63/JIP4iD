@@ -37,7 +37,7 @@ struct Movie: Codable {
 
     struct SpokenLanguages: Codable {
 
-        let iso_639_1: String?
+        let iso6391: String?
         let name: String?
     }
 
