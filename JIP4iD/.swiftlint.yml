@@ -3,6 +3,7 @@
 excluded:
   - JIP4iD/AppDelegate.swift
   - JIP4iD/SceneDelegate.swift
+  - JIP4iD/ContentView.swift
 
 ################################################################################
 
@@ -109,7 +110,7 @@ opt_in_rules:
   - extension_access_modifier
   - fallthrough
   - fatal_error_message
-#  - file_header
+  - file_header
   - file_name
   - first_where
   - force_unwrapping
@@ -162,12 +163,8 @@ opt_in_rules:
   - vertical_parameter_alignment_on_call
   - yoda_condition
 
-opt_in_rules:
-  - file_header
-
 file_header:
-  required_pattern: |
-                    import
+  required_pattern: import
 
 custom_rules:
   empty_first_line: # https://github.com/brandenr/swiftlintconfig/blob/master/.swiftlint.yml
