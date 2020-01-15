@@ -38,10 +38,14 @@ class NetworkManagerMovie: ObservableObject {
 
     func loadData(_ id: Int) {
         
-        guard let url = URL(string: "\(apiUrlBaseBegin)\(id)\(apiUrlBaseEnd)") else { return }
+        guard let url = URL(string: "\(apiUrlBaseBegin)\(id)\(apiUrlBaseEnd)") else {
+            return
+        }
 
         URLSession.shared.dataTask(with: url){ (data, _, _) in
-            guard let data = data else { return }
+            guard let data = data else {
+                return
+            }
 
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase

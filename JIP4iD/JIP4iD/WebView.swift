@@ -22,7 +22,9 @@ public struct WebView: UIViewRepresentable {
 
     public func updateUIView(_ uiView: WKWebView, context: Context) {
 
-        guard context.coordinator.needsToLoadURL else { return }
+        guard context.coordinator.needsToLoadURL else {
+            return
+        }
         
         uiView.load(URLRequest(url: url))
     }
