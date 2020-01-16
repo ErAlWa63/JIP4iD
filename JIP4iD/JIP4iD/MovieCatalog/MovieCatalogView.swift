@@ -8,13 +8,13 @@
 
 import SwiftUI
 
-struct MovieCatalogView: View {
+public struct MovieCatalogView: View {
     
-    @ObservedObject var networkManager = NetworkManagerMoviePopular()
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    @Environment(\.verticalSizeClass) var verticalSizeClass
+    @ObservedObject private var networkManager = NetworkManagerMoviePopular()
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
     
-    var body: some View {
+    public var body: some View {
         NavigationView {
             VStack {
                 if networkManager.loading {
@@ -36,7 +36,7 @@ struct MovieCatalogView: View {
         }
     }
     
-    func defaultMinListRowHeight() -> CGFloat {
+    private func defaultMinListRowHeight() -> CGFloat {
         let isLandscape = UIScreen.main.bounds.width > UIScreen.main.bounds.height
         
         switch (horizontalSizeClass, verticalSizeClass, isLandscape) {
@@ -50,14 +50,14 @@ struct MovieCatalogView: View {
         }
     }
     
-    func movieLine(_ url: String, _ title: String) -> some View {
+    private func movieLine(_ url: String, _ title: String) -> some View {
         GeometryReader { geo in
             self.movieLineItems(geo, url, title)
         }
         
     }
     
-    func movieLineItems(_ proxy: GeometryProxy, _ url: String, _ title: String) -> some View {
+    private func movieLineItems(_ proxy: GeometryProxy, _ url: String, _ title: String) -> some View {
         HStack(alignment: .center) {
             self.moviePoster(proxy, url)
             self.movieTitle(title)
@@ -65,13 +65,13 @@ struct MovieCatalogView: View {
         }
     }
     
-    func moviePoster(_ proxy: GeometryProxy, _ url: String ) -> some View {
+    private func moviePoster(_ proxy: GeometryProxy, _ url: String ) -> some View {
         ImageView(withURL: url)
             .frame(width: proxy.size.width/2, height: proxy.size.height)
             .aspectRatio(contentMode: .fit)
     }
     
-    func movieTitle( _ title: String) -> some View {
+    private func movieTitle( _ title: String) -> some View {
         Text(title)
             .font(.headline)
             .lineLimit(nil)
@@ -79,7 +79,7 @@ struct MovieCatalogView: View {
     }
 }
 
-struct MovieCatalogView_Previews: PreviewProvider {
+private struct MovieCatalogView_Previews: PreviewProvider {
     static var previews: some View {
         MovieCatalogView()
     }
