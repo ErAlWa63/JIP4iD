@@ -93,6 +93,5 @@ iOSInjectionProject/
 #
 # temporary files
 
+swiftlint.txt
 JIP4iD/swiftlint.txt
-JIP4iD/.#.swiftlint.yml
-JIP4iD/#.swiftlint.yml#
