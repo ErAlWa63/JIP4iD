@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct MovieDetails: View {
+public struct MovieDetails: View {
     
-    @ObservedObject var networkManager = NetworkManagerMovie()
-    @State var showingDetail = false
+    @ObservedObject private var networkManager = NetworkManagerMovie()
+    @State private var showingDetail = false
 
-    var id: Int
+    public var id: Int
 
-    var body: some View {
+    public var body: some View {
         VStack {
             if networkManager.loadingMovie {
                 Text("Loading...")
@@ -72,11 +72,11 @@ struct MovieDetails: View {
         }
     }
 
-    func isLandscape() -> Bool {
+    private func isLandscape() -> Bool {
         UIScreen.main.bounds.width > UIScreen.main.bounds.height
     }
 
-    func movieButtonTrailer(_ proxy: GeometryProxy, _ isLandscape: Bool, _ videoCount: Int ) -> some View {
+    private func movieButtonTrailer(_ proxy: GeometryProxy, _ isLandscape: Bool, _ videoCount: Int ) -> some View {
         Button(action: { self.showingDetail.toggle() }) {
             if videoCount == 0 {
                 Text("No Trailer")
@@ -95,20 +95,20 @@ struct MovieDetails: View {
         .padding(.bottom)
     }
 
-    func movieTrailerView(_ proxy: GeometryProxy, _ key: String ) -> some View {
+    private func movieTrailerView(_ proxy: GeometryProxy, _ key: String ) -> some View {
         TrailerView(key: key)
             .frame(width: proxy.size.width, height: proxy.size.height, alignment: .center)
             .aspectRatio(contentMode: .fit)
     }
 
-    func moviePoster(_ proxy: GeometryProxy, _ isLandscape: Bool, _ url: String ) -> some View {
+    private func moviePoster(_ proxy: GeometryProxy, _ isLandscape: Bool, _ url: String ) -> some View {
         ImageView(withURL: url)
             .frame(minWidth: isLandscape ? proxy.size.width / 2 : proxy.size.width, minHeight: proxy.size.height/3)
             .aspectRatio(contentMode: .fit)
             .padding(.bottom)
     }
 
-    func movieTitle() -> some View {
+    private func movieTitle() -> some View {
         HStack {
             Text(networkManager.movieDetails.title)
                 .font(.headline)
@@ -118,7 +118,7 @@ struct MovieDetails: View {
         .padding(.bottom)
     }
 
-    func movieGenres() -> some View {
+    private func movieGenres() -> some View {
         VStack {
             HStack {
                 Text("Genres")
@@ -134,7 +134,7 @@ struct MovieDetails: View {
         .padding(.bottom)
     }
 
-    func movieReleaseDate() -> some View {
+    private func movieReleaseDate() -> some View {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let date = dateFormatter.date(from: networkManager.movieDetails.releaseDate)!
@@ -154,7 +154,7 @@ struct MovieDetails: View {
         .padding(.bottom)
     }
 
-    func movieOverview() -> some View {
+    private func movieOverview() -> some View {
         VStack {
             HStack {
                 Text("Overview")
