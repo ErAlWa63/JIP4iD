@@ -6,28 +6,28 @@
 //  Copyright © 2020 Erik Waterham. All rights reserved.
 //
 
-struct MoviePopular: Codable {
+public struct MoviePopular: Codable {
 
-    struct Results: Codable, Identifiable {
+    public struct Results: Codable, Identifiable {
 
-        let popularity: Double
-        let voteCount: Int
-        let video: Bool
-        let posterPath: String
-        let id: Int
-        let adult: Bool
-        let backdropPath: String
-        let originalLanguage: String
-        let originalTitle: String
-        let genreIds: [Int]
-        let title: String
-        let voteAverage: Double
-        let overview: String
-        let releaseDate: String
+        public let popularity: Double
+        public let voteCount: Int
+        public let video: Bool
+        public let posterPath: String
+        public let id: Int
+        public let adult: Bool
+        public let backdropPath: String
+        public let originalLanguage: String
+        public let originalTitle: String
+        public let genreIds: [Int]
+        public let title: String
+        public let voteAverage: Double
+        public let overview: String
+        public let releaseDate: String
     }
     
-    let page: Int
-    let results: [Results]
-    let totalResults: Int
-    let totalPages: Int
+    public let page: Int
+    public let results: [Results]
+    public let totalResults: Int
+    public let totalPages: Int
 }
