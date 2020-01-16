@@ -1,5 +1,3 @@
-# Optimized for JIP4iD
-
 excluded:
   - JIP4iD/AppDelegate.swift
   - JIP4iD/SceneDelegate.swift
@@ -10,7 +8,7 @@ excluded:
 
 identifier_name:
   min_length:
-    warning: 0 # use 1 for single character loop counter detection
+    warning: 3 # use 1 for single character loop counter detection
     error: 0 # use 0 to suppress error
   max_length: 
     warning: 40 # minimum for warning free

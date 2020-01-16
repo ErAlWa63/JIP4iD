@@ -1,16 +1,18 @@
 import SwiftUI
 import Combine
 
-class ImageLoader: ObservableObject {
+public class ImageLoader: ObservableObject {
     
-    var dataPublisher = PassthroughSubject<Data, Never>()
-    var data = Data() {
+    public var dataPublisher = PassthroughSubject<Data, Never>()
+
+    private var data = Data() {
         didSet {
             dataPublisher.send(data)
         }
     }
 
-    init(urlString: String) {
+    public init(urlString: String) {
+
         guard let url = URL(string: urlString) else {
             return
         }
