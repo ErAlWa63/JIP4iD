@@ -8,14 +8,18 @@
 
 import SwiftUI
 
-struct ImageView: View {
+public struct ImageView: View {
     
-    @ObservedObject var imageLoader: ImageLoader
-    @State var image: UIImage = UIImage()
-    init(withURL url: String) {
+    @ObservedObject private var imageLoader: ImageLoader
+
+    @State private var image: UIImage = UIImage()
+
+    public init(withURL url: String) {
+
         imageLoader = ImageLoader(urlString: url)
     }
-    var body: some View {
+
+    public var body: some View {
         GeometryReader { geo in
             VStack {
                 Image(uiImage: self.image)
@@ -26,7 +30,9 @@ struct ImageView: View {
         }
     }
 }
-struct ImageView_Previews: PreviewProvider {
+
+private struct ImageView_Previews: PreviewProvider {
+
     static var previews: some View {
         ImageView(withURL: "")
     }
