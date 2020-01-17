@@ -13,13 +13,13 @@
 
 ###### sources
 
-- [ ] (SwiftLint in Use)[https://medium.com/flawless-app-stories/swiftlint-in-use-279f44b3182e]
-- [ ] (JSON Decoding in Swift with Codable: A Practical Guide)[https://matteomanferdini.com/codable/#more-2385]
-- [ ] (How To Use Custom Colors and Modifiers in SwiftUI)[https://medium.com/better-programming/custom-colors-and-modifiers-in-swiftui-a093c243c126]
-- [ ] (SwiftUI MVVM and Mock Service Unit Testing)[https://medium.com/@liemvo/swiftui-mvvm-and-mock-service-unit-testing-13ed2fa167ec]
-- [ ] (SwiftUI: fetch, parse, and display in data to the List. Navigation to DetailView)[https://medium.com/@liemvo/swiftui-fetch-parse-and-display-in-data-to-the-list-888079911a85]
-- [ ] (Combine’s What Makes SwiftUI Really Shine)[https://infinum.com/the-capsized-eight/combine-makes-swiftui-shine]
-- [ ] (SwiftUI Is Here to Knock UIKit out of Its Shoes)[https://infinum.com/the-capsized-eight/swiftui-is-here-to-knock-uikit-out-of-its-shoes]
-- [ ] (Working with two side by side views in SwiftUI)[https://www.hackingwithswift.com/books/ios-swiftui/working-with-two-side-by-side-views-in-swiftui]
-- [ ] (Remote images in SwiftUI)[https://dev.to/gualtierofr/remote-images-in-swiftui-49jp]
-- [ ] (Building Movie Trailer App Using SwiftUI)[https://medium.com/flawless-app-stories/building-movie-trailer-app-using-swiftui-5d4dc5497462]
+- [ ] [SwiftLint in Use](https://medium.com/flawless-app-stories/swiftlint-in-use-279f44b3182e)
+- [ ] [JSON Decoding in Swift with Codable: A Practical Guide](https://matteomanferdini.com/codable/#more-2385)
+- [ ] [How To Use Custom Colors and Modifiers in SwiftUI](https://medium.com/better-programming/custom-colors-and-modifiers-in-swiftui-a093c243c126)
+- [ ] [SwiftUI MVVM and Mock Service Unit Testing](https://medium.com/@liemvo/swiftui-mvvm-and-mock-service-unit-testing-13ed2fa167ec)
+- [ ] [SwiftUI: fetch, parse, and display in data to the List. Navigation to DetailView](https://medium.com/@liemvo/swiftui-fetch-parse-and-display-in-data-to-the-list-888079911a85)
+- [ ] [Combine’s What Makes SwiftUI Really Shine](https://infinum.com/the-capsized-eight/combine-makes-swiftui-shine)
+- [ ] [SwiftUI Is Here to Knock UIKit out of Its Shoes](https://infinum.com/the-capsized-eight/swiftui-is-here-to-knock-uikit-out-of-its-shoes)
+- [ ] [Working with two side by side views in SwiftUI](https://www.hackingwithswift.com/books/ios-swiftui/working-with-two-side-by-side-views-in-swiftui)
+- [ ] [Remote images in SwiftUI](https://dev.to/gualtierofr/remote-images-in-swiftui-49jp)
+- [ ] [Building Movie Trailer App Using SwiftUI](https://medium.com/flawless-app-stories/building-movie-trailer-app-using-swiftui-5d4dc5497462)
