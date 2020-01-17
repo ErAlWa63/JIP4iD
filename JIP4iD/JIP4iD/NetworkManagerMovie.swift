@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class NetworkManagerMovie: ObservableObject {
+public class NetworkManagerMovie: ObservableObject {
     
     @Published var movieDetails = Movie(
         adult: false,
