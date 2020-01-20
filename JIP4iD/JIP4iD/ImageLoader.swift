@@ -3,9 +3,9 @@ import Combine
 
 public class ImageLoader: ObservableObject {
     
-    public var dataPublisher = PassthroughSubject<Data, Never>()
+    public var dataPublisher: PassthroughSubject = PassthroughSubject<Data, Never>()
 
-    private var data = Data() {
+    private var data: Data = Data() {
         didSet {
             dataPublisher.send(data)
         }
@@ -17,7 +17,7 @@ public class ImageLoader: ObservableObject {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task: URLSessionDataTask = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 return
             }
