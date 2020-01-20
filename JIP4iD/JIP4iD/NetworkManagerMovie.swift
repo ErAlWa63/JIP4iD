@@ -11,7 +11,7 @@ import Combine
 
 public class NetworkManagerMovie: ObservableObject {
     
-    @Published public var movieDetails = Movie(
+    @Published public var movieDetails: Movie = Movie(
         adult: false,
         backdropPath: "",
         belongsToCollection: nil,
@@ -26,10 +26,10 @@ public class NetworkManagerMovie: ObservableObject {
         video: false, voteAverage: nil, voteCount: nil,
         videos: Movie.Videos(results: [])
     )
-    @Published public var loadingMovie = true
+    @Published public var loadingMovie: Bool = true
 
-    private let apiUrlBaseBegin = "https://api.themoviedb.org/3/movie/"
-    private let apiUrlBaseEnd = "?api_key=61ef4a247342ea9c8388ef6377a75a24&append_to_response=videos"
+    private let apiUrlBaseBegin: String = "https://api.themoviedb.org/3/movie/"
+    private let apiUrlBaseEnd: String = "?api_key=61ef4a247342ea9c8388ef6377a75a24&append_to_response=videos"
 
     public init() {
 
@@ -47,16 +47,16 @@ public class NetworkManagerMovie: ObservableObject {
                 return
             }
 
-            let decoder = JSONDecoder()
+            let decoder: JSONDecoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 
             do {
-                let loaded = try decoder.decode(Movie.self, from: data)
+                let loaded = try decoder.decode(Movie.self, from: data) // swiftlint:disable:this explicit_type_interface
                 DispatchQueue.main.async {
                     self.movieDetails = loaded
                     self.loadingMovie = false
                 }
-            } catch let jsonErr {
+            } catch let jsonErr { // swiftlint:disable:this explicit_type_interface
                 print("NetworkManagerMovie Error decoding JSON", jsonErr)
             }
             return
