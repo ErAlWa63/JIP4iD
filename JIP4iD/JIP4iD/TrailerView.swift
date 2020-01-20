@@ -9,14 +9,14 @@
 import SwiftUI
 import WebKit
 
-struct TrailerView: View {
+public struct TrailerView: View {
 
-    @ObservedObject var webViewStore = WebViewStore()
-    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject private var webViewStore = WebViewStore()
+    @Environment(\.presentationMode) private var presentationMode
 
-    var key: String
+    public var key: String
 
-    var body: some View {
+    public var body: some View {
         NavigationView {
             VStack {
                 WebView(url: URL(string: "https://www.youtube.com/embed/\(self.key)")!)
