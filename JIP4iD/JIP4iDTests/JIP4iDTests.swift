@@ -9,7 +9,7 @@
 import XCTest
 @testable import JIP4iD
 
-class JIP4iDTests: XCTestCase {
+private class JIP4iDTests: XCTestCase {
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
