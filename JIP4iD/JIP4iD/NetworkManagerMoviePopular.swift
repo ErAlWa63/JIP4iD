@@ -8,12 +8,14 @@
 
 import Foundation
 
-class NetworkManagerMoviePopular: ObservableObject {
+public class NetworkManagerMoviePopular: ObservableObject {
     
-    @Published var movies = MoviePopular(page: 0, results: [], totalResults: 0, totalPages: 0)
-    @Published var loading = true
+    @Published public var movies = MoviePopular(page: 0, results: [], totalResults: 0, totalPages: 0)
+    @Published public var loading = true
     private let apiUrlBase = "https://api.themoviedb.org/3/movie/popular?api_key=61ef4a247342ea9c8388ef6377a75a24"
-    init() {
+
+    public init() {
+
         loading = true
         loadData()
     }
