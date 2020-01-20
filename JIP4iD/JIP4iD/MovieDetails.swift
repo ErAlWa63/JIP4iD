@@ -10,8 +10,8 @@ import SwiftUI
 
 public struct MovieDetails: View {
     
-    @ObservedObject private var networkManager = NetworkManagerMovie()
-    @State private var showingDetail = false
+    @ObservedObject private var networkManager: NetworkManagerMovie = NetworkManagerMovie()
+    @State private var showingDetail: Bool = false
 
     public var id: Int
 
@@ -135,9 +135,9 @@ public struct MovieDetails: View {
     }
 
     private func movieReleaseDate() -> some View {
-        let dateFormatter = DateFormatter()
+        let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date = dateFormatter.date(from: networkManager.movieDetails.releaseDate)!
+        let date: Date = dateFormatter.date(from: networkManager.movieDetails.releaseDate)!
         dateFormatter.dateFormat = "dd.MM.yyyy"
         return VStack {
             HStack {
