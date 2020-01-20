@@ -151,7 +151,7 @@ opt_in_rules:
   - yoda_condition
 
 file_header:
-  required_pattern: import
+  required_pattern: import *
 
 custom_rules:
   empty_first_line: # https://github.com/brandenr/swiftlintconfig/blob/master/.swiftlint.yml

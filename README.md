@@ -23,3 +23,4 @@
 - [ ] [Working with two side by side views in SwiftUI](https://www.hackingwithswift.com/books/ios-swiftui/working-with-two-side-by-side-views-in-swiftui)
 - [ ] [Remote images in SwiftUI](https://dev.to/gualtierofr/remote-images-in-swiftui-49jp)
 - [ ] [Building Movie Trailer App Using SwiftUI](https://medium.com/flawless-app-stories/building-movie-trailer-app-using-swiftui-5d4dc5497462)
+- [] [Build performance analysing in Xcode 10](https://www.avanderlee.com/optimization/analysing-build-performance-xcode-10/)
