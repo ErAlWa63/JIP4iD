@@ -11,7 +11,7 @@ import Combine
 
 public class NetworkManagerMovie: ObservableObject {
     
-    @Published var movieDetails = Movie(
+    @Published public var movieDetails = Movie(
         adult: false,
         backdropPath: "",
         belongsToCollection: nil,
@@ -26,17 +26,17 @@ public class NetworkManagerMovie: ObservableObject {
         video: false, voteAverage: nil, voteCount: nil,
         videos: Movie.Videos(results: [])
     )
-    @Published var loadingMovie = true
+    @Published public var loadingMovie = true
 
     private let apiUrlBaseBegin = "https://api.themoviedb.org/3/movie/"
     private let apiUrlBaseEnd = "?api_key=61ef4a247342ea9c8388ef6377a75a24&append_to_response=videos"
 
-    init() {
+    public init() {
 
         loadingMovie = true
     }
 
-    func loadData(_ id: Int) {
+    public func loadData(_ id: Int) {
         
         guard let url = URL(string: "\(apiUrlBaseBegin)\(id)\(apiUrlBaseEnd)") else {
             return
