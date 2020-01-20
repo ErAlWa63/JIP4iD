@@ -9,7 +9,7 @@
 import SwiftUI
 
 public class UIViewContainerView<ContentView: UIView>: UIView {
-    var contentView: ContentView? {
+    private var contentView: ContentView? {
         willSet {
             contentView?.removeFromSuperview()
         }
