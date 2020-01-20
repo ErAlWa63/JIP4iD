@@ -10,9 +10,9 @@ import SwiftUI
 
 public struct MovieCatalogView: View {
     
-    @ObservedObject private var networkManager = NetworkManagerMoviePopular()
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
+    @ObservedObject private var networkManager: NetworkManagerMoviePopular = NetworkManagerMoviePopular()
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass // swiftlint:disable:this explicit_type_interface
+    @Environment(\.verticalSizeClass) private var verticalSizeClass // swiftlint:disable:this explicit_type_interface
     
     public var body: some View {
         NavigationView {
@@ -37,7 +37,7 @@ public struct MovieCatalogView: View {
     }
     
     private func defaultMinListRowHeight() -> CGFloat {
-        let isLandscape = UIScreen.main.bounds.width > UIScreen.main.bounds.height
+        let isLandscape: Bool = UIScreen.main.bounds.width > UIScreen.main.bounds.height
         
         switch (horizontalSizeClass, verticalSizeClass, isLandscape) {
         case (.compact, .regular, false): return UIScreen.main.bounds.height * 0.12
