@@ -11,11 +11,13 @@ import WebKit
 
 public struct WebView: UIViewRepresentable {
     
-    let url: URL
+    public let url: URL
 
     public func makeUIView(context: Context) -> WKWebView {
 
+        // swiftlint:disable explicit_type_interface
         let view = WKWebView()
+        // swiftlint:enable explicit_type_interface
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return view
     }
@@ -36,11 +38,11 @@ public struct WebView: UIViewRepresentable {
 
     public class Coordinator {
 
-        var needsToLoadURL = true
+        public var needsToLoadURL = true
     }
 }
 
-struct WebKitView_Previews: PreviewProvider {
+private struct WebKitView_Previews: PreviewProvider {
 
     static var previews: some View {
         WebView(url: URL(string: "...")!)
