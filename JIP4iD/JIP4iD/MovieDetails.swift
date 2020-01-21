@@ -137,7 +137,7 @@ public struct MovieDetails: View {
     private func movieReleaseDate() -> some View {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date: Date = dateFormatter.date(from: networkManager.movieDetails.releaseDate)!
+        let date: Date = dateFormatter.date(from: networkManager.movieDetails.releaseDate)! // swiftlint:disable:this force_unwrapping
         dateFormatter.dateFormat = "dd.MM.yyyy"
         return VStack {
             HStack {
