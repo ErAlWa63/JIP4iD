@@ -9,16 +9,16 @@
 import SwiftUI
 
 public struct ImageView: View {
-    
+
     @ObservedObject private var imageLoader: ImageLoader
-    
+
     @State private var image: UIImage = UIImage() // swiftlint:disable:this redundant_type_annotation unnecessary_type
-    
+
     public init(withURL url: String) {
-        
+
         imageLoader = ImageLoader(urlString: url)
     }
-    
+
     public var body: some View {
         VStack {
             Image(uiImage: self.image)
@@ -30,7 +30,7 @@ public struct ImageView: View {
 }
 
 private struct ImageView_Previews: PreviewProvider {
-    
+
     static var previews: some View {
         ImageView(withURL: "")
     }
