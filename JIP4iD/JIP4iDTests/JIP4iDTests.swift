@@ -9,7 +9,7 @@
 @testable import JIP4iD
 import XCTest
 
-private class JIP4iDTests: XCTestCase {
+private class JIP4iDTests: XCTestCase { // swiftlint:disable:this private_unit_test
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
