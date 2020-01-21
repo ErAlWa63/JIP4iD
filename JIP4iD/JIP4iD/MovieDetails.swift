@@ -135,18 +135,14 @@ public struct MovieDetails: View {
     }
 
     private func movieReleaseDate() -> some View {
-        let dateFormatter: DateFormatter = DateFormatter() // swiftlint:disable:this redundant_type_annotation unnecessary_type
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date: Date = dateFormatter.date(from: networkManager.movieDetails.releaseDate)! // swiftlint:disable:this force_unwrapping
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        return VStack {
+        VStack {
             HStack {
                 Text("Date")
                     .font(.headline)
                 Spacer()
             }
             HStack {
-                Text(dateFormatter.string(from: date))
+                Text(networkManager.movieDetails.releaseDate.dottedDate)
                     .font(.footnote)
                 Spacer()
             }
