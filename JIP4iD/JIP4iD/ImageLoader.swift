@@ -11,9 +11,9 @@ import SwiftUI
 
 public class ImageLoader: ObservableObject {
 
-    public var dataPublisher: PassthroughSubject = PassthroughSubject<Data, Never>()
+    public var dataPublisher: PassthroughSubject = PassthroughSubject<Data, Never>() // swiftlint:disable:this unnecessary_type
 
-    private var data: Data = Data() { // swiftlint:disable:this redundant_type_annotation
+    private var data: Data = Data() { // swiftlint:disable:this redundant_type_annotation unnecessary_type
         didSet {
             dataPublisher.send(data)
         }

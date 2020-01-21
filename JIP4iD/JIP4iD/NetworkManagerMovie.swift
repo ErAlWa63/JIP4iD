@@ -11,7 +11,7 @@ import Foundation
 
 public class NetworkManagerMovie: ObservableObject {
 
-    @Published public var movieDetails: Movie = Movie( // swiftlint:disable:this redundant_type_annotation
+    @Published public var movieDetails: Movie = Movie( // swiftlint:disable:this redundant_type_annotation unnecessary_type
         adult: false,
         backdropPath: "",
         belongsToCollection: nil,
@@ -60,7 +60,7 @@ public class NetworkManagerMovie: ObservableObject {
                 return
             }
 
-            let decoder: JSONDecoder = JSONDecoder() // swiftlint:disable:this redundant_type_annotation
+            let decoder: JSONDecoder = JSONDecoder() // swiftlint:disable:this redundant_type_annotation unnecessary_type
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 
             do {

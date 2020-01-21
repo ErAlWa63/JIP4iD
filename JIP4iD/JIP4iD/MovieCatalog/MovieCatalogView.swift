@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct MovieCatalogView: View {
 
-    @ObservedObject private var networkManager: NetworkManagerMoviePopular = NetworkManagerMoviePopular() // swiftlint:disable:this redundant_type_annotation
+    @ObservedObject private var networkManager: NetworkManagerMoviePopular = NetworkManagerMoviePopular() // swiftlint:disable:this redundant_type_annotation unnecessary_type
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass // swiftlint:disable:this explicit_type_interface
     @Environment(\.verticalSizeClass) private var verticalSizeClass // swiftlint:disable:this explicit_type_interface
 

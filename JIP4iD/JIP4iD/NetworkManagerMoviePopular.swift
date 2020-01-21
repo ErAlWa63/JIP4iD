@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  NetworkManagerMoviePopular.swift
 //  JIP4iD
 //
 //  Created by Erik Waterham on 07/01/2020.
@@ -10,7 +10,7 @@ import Foundation
 
 public class NetworkManagerMoviePopular: ObservableObject {
 
-    @Published public var movies: MoviePopular = MoviePopular(page: 0, results: [], totalResults: 0, totalPages: 0) // swiftlint:disable:this redundant_type_annotation
+    @Published public var movies: MoviePopular = MoviePopular(page: 0, results: [], totalResults: 0, totalPages: 0) // swiftlint:disable:this redundant_type_annotation unnecessary_type
     @Published public var loading: Bool = true
     private let apiUrlBase: String = "https://api.themoviedb.org/3/movie/popular?api_key=61ef4a247342ea9c8388ef6377a75a24"
 
@@ -30,7 +30,7 @@ public class NetworkManagerMoviePopular: ObservableObject {
                 return
             }
 
-            let decoder: JSONDecoder = JSONDecoder() // swiftlint:disable:this redundant_type_annotation
+            let decoder: JSONDecoder = JSONDecoder() // swiftlint:disable:this redundant_type_annotation unnecessary_type
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 
             do {

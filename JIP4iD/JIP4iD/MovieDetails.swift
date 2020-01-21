@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct MovieDetails: View {
 
-    @ObservedObject private var networkManager: NetworkManagerMovie = NetworkManagerMovie() // swiftlint:disable:this redundant_type_annotation
+    @ObservedObject private var networkManager: NetworkManagerMovie = NetworkManagerMovie() // swiftlint:disable:this redundant_type_annotation unnecessary_type
     @State private var showingDetail: Bool = false
 
     public var id: Int
@@ -135,7 +135,7 @@ public struct MovieDetails: View {
     }
 
     private func movieReleaseDate() -> some View {
-        let dateFormatter: DateFormatter = DateFormatter() // swiftlint:disable:this redundant_type_annotation
+        let dateFormatter: DateFormatter = DateFormatter() // swiftlint:disable:this redundant_type_annotation unnecessary_type
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let date: Date = dateFormatter.date(from: networkManager.movieDetails.releaseDate)! // swiftlint:disable:this force_unwrapping
         dateFormatter.dateFormat = "dd.MM.yyyy"
