@@ -9,7 +9,7 @@
 import Foundation
 
 public class NetworkManagerMoviePopular: ObservableObject {
-    
+
     @Published public var movies: MoviePopular = MoviePopular(page: 0, results: [], totalResults: 0, totalPages: 0)
     @Published public var loading: Bool = true
     private let apiUrlBase: String = "https://api.themoviedb.org/3/movie/popular?api_key=61ef4a247342ea9c8388ef6377a75a24"
