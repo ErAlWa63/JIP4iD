@@ -19,14 +19,14 @@ public struct TrailerView: View {
     public var body: some View {
         NavigationView {
             VStack {
-                WebView(url: URL(string: "https://www.youtube.com/embed/\(self.key)")!)
+                WebView(url: URL(string: "https://www.youtube.com/embed/\(self.key)")!) // swiftlint:disable:this force_unwrapping
                 Spacer()
             }
             .navigationBarTitle(Text(""), displayMode: .inline)
             .navigationBarItems(trailing: Button(action: { self.presentationMode.wrappedValue.dismiss() }) { Text("Done") })
         }
         .onAppear {
-            self.webViewStore.webView.load(URLRequest(url: URL(string: "https://www.youtube.com/embed/\(self.key)")!))
+            self.webViewStore.webView.load(URLRequest(url: URL(string: "https://www.youtube.com/embed/\(self.key)")!)) // swiftlint:disable:this force_unwrapping
         }
     }
 }
