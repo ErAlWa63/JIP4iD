@@ -25,7 +25,7 @@ public class NetworkManagerMoviePopular: ObservableObject {
             return
         }
 
-        URLSession.shared.dataTask(with: url){ (data, _, _) in
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
             guard let data = data else {
                 return
             }
