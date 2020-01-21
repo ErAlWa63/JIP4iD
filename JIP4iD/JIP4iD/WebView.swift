@@ -38,7 +38,7 @@ public struct WebView: UIViewRepresentable {
 
     public class Coordinator {
 
-        public var needsToLoadURL = true
+        public var needsToLoadURL: Bool = true
     }
 }
 
