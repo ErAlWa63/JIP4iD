@@ -66,7 +66,7 @@ public struct MovieCatalogView: View {
 
     private func moviePoster(_ proxy: GeometryProxy, _ url: String ) -> some View {
         ImageView(withURL: url)
-            .frame(width: proxy.size.width/2, height: proxy.size.height)
+            .frame(width: proxy.size.width / 2, height: proxy.size.height)
             .aspectRatio(contentMode: .fit)
     }
 
