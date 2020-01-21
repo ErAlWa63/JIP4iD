@@ -39,7 +39,7 @@ public class NetworkManagerMoviePopular: ObservableObject {
                     self.movies = loaded
                     self.loading = false
                 }
-            } catch let jsonErr { // swiftlint:disable:this explicit_type_interface
+            } catch let jsonErr { // swiftlint:disable:this explicit_type_interface untyped_error_in_catch
                 print("NetworkManagerMoviePopular Error decoding JSON", jsonErr)
             }
             return
