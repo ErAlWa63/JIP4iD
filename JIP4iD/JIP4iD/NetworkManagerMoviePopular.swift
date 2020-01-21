@@ -10,9 +10,9 @@ import Foundation
 
 public class NetworkManagerMoviePopular: ObservableObject {
     
-    @Published public var movies = MoviePopular(page: 0, results: [], totalResults: 0, totalPages: 0)
-    @Published public var loading = true
-    private let apiUrlBase = "https://api.themoviedb.org/3/movie/popular?api_key=61ef4a247342ea9c8388ef6377a75a24"
+    @Published public var movies: MoviePopular = MoviePopular(page: 0, results: [], totalResults: 0, totalPages: 0)
+    @Published public var loading: Bool = true
+    private let apiUrlBase: String = "https://api.themoviedb.org/3/movie/popular?api_key=61ef4a247342ea9c8388ef6377a75a24"
 
     public init() {
 
@@ -30,16 +30,16 @@ public class NetworkManagerMoviePopular: ObservableObject {
                 return
             }
             
-            let decoder = JSONDecoder()
+            let decoder: JSONDecoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 
             do {
-                let loaded = try decoder.decode(MoviePopular.self, from: data)
+                let loaded: MoviePopular = try decoder.decode(MoviePopular.self, from: data)
                 DispatchQueue.main.async {
                     self.movies = loaded
                     self.loading = false
                 }
-            } catch let jsonErr {
+            } catch let jsonErr { // swiftlint:disable:this explicit_type_interface
                 print("NetworkManagerMoviePopular Error decoding JSON", jsonErr)
             }
             return
