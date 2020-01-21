@@ -73,6 +73,7 @@ public class NetworkManagerMovie: ObservableObject {
                 print("NetworkManagerMovie Error decoding JSON", jsonErr)
             }
             return
-        }.resume()
+        }
+        .resume()
     }
 }

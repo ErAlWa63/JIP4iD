@@ -43,6 +43,7 @@ public class NetworkManagerMoviePopular: ObservableObject {
                 print("NetworkManagerMoviePopular Error decoding JSON", jsonErr)
             }
             return
-        }.resume()
+        }
+        .resume()
     }
 }
