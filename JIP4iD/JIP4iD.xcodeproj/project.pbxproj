@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		715D539F23D7AF8200BA6B90 /* String+dottedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D539E23D7AF8200BA6B90 /* String+dottedDate.swift */; };
 		71B8058A23C7235F00554115 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B8058923C7235F00554115 /* ImageLoader.swift */; };
 		71B8058C23C723C900554115 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B8058B23C723C900554115 /* ImageView.swift */; };
 		71B8059123CDB30700554115 /* MovieCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B8059023CDB30700554115 /* MovieCatalogView.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		715D539E23D7AF8200BA6B90 /* String+dottedDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+dottedDate.swift"; sourceTree = "<group>"; };
 		71B8058923C7235F00554115 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		71B8058B23C723C900554115 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		71B8059023CDB30700554115 /* MovieCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		715D53A023D7B52800BA6B90 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				715D539E23D7AF8200BA6B90 /* String+dottedDate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		71B8058D23CDB25700554115 /* MovieCatalog */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 				71CEA15A23C3565800F75B52 /* SceneDelegate.swift */,
 				71CEA15F23C3565800F75B52 /* ContentView.swift */,
 				71B8058D23CDB25700554115 /* MovieCatalog */,
+				715D53A023D7B52800BA6B90 /* Common */,
 				71CEA18D23C3AD5C00F75B52 /* TrailerView.swift */,
 				71CEA1A323C64B6C00F75B52 /* WebViewStore.swift */,
 				71CEA18B23C3713500F75B52 /* WebView.swift */,
@@ -350,6 +361,7 @@
 				71CEA19023C3B28000F75B52 /* MoviePopular.swift in Sources */,
 				71CEA15923C3565800F75B52 /* AppDelegate.swift in Sources */,
 				71B8059323CDB4B300554115 /* NoDataAvailableView.swift in Sources */,
+				715D539F23D7AF8200BA6B90 /* String+dottedDate.swift in Sources */,
 				71CEA16023C3565800F75B52 /* ContentView.swift in Sources */,
 				71CEA15B23C3565800F75B52 /* SceneDelegate.swift in Sources */,
 				71CEA1A223C5C76F00F75B52 /* Movie.swift in Sources */,
