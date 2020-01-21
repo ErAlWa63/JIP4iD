@@ -154,7 +154,7 @@ file_header:
   required_pattern: |
                     \/\/
                     \/\/  .*?\.swift
-                    \/\/  JIP4iD
+                    \/\/  .*?
                     \/\/
                     \/\/  Created by .*? on \d{1,2}\/\d{1,2}\/\d{4}\.
                     \/\/  Copyright © \d{4} Erik Waterham\. All rights reserved\.

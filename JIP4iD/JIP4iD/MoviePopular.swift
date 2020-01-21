@@ -25,7 +25,7 @@ public struct MoviePopular: Codable {
         public let overview: String
         public let releaseDate: String
     }
-    
+
     public let page: Int
     public let results: [Results]
     public let totalResults: Int

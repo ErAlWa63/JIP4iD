@@ -9,7 +9,7 @@
 import SwiftUI
 
 public struct MovieDetails: View {
-    
+
     @ObservedObject private var networkManager: NetworkManagerMovie = NetworkManagerMovie()
     @State private var showingDetail: Bool = false
 

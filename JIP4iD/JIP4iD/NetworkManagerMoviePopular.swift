@@ -24,12 +24,12 @@ public class NetworkManagerMoviePopular: ObservableObject {
         guard let url = URL(string: "\(apiUrlBase)") else {
             return
         }
-        
+
         URLSession.shared.dataTask(with: url){ (data, _, _) in
             guard let data = data else {
                 return
             }
-            
+
             let decoder: JSONDecoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 

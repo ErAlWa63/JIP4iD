@@ -9,7 +9,7 @@
 import SwiftUI
 
 public struct ImageView: View {
-    
+
     @ObservedObject private var imageLoader: ImageLoader
 
     @State private var image: UIImage = UIImage()

@@ -57,7 +57,7 @@ public struct Movie: Codable {
 
         public let results: [Results]
     }
-    
+
     public let adult: Bool
     public let backdropPath: String
     public let belongsToCollection: BelongsToCollection?

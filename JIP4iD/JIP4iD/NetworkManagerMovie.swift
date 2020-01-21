@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 public class NetworkManagerMovie: ObservableObject {
-    
+
     @Published public var movieDetails: Movie = Movie(
         adult: false,
         backdropPath: "",
@@ -50,7 +50,7 @@ public class NetworkManagerMovie: ObservableObject {
     }
 
     public func loadData(_ id: Int) {
-        
+
         guard let url = URL(string: "\(apiUrlBaseBegin)\(id)\(apiUrlBaseEnd)") else {
             return
         }

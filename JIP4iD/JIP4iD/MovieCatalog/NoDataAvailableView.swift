@@ -16,7 +16,7 @@ public struct NoDataAvailableView: View {
 }
 
 private struct NoDataAvailableView_Previews: PreviewProvider {
-    
+
     static var previews: some View {
         NoDataAvailableView()
     }
