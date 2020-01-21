@@ -13,7 +13,7 @@ public class ImageLoader: ObservableObject {
 
     public var dataPublisher: PassthroughSubject = PassthroughSubject<Data, Never>()
 
-    private var data: Data = Data() {
+    private var data: Data = Data() { // swiftlint:disable:this redundant_type_annotation
         didSet {
             dataPublisher.send(data)
         }

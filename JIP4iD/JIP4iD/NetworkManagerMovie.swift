@@ -11,7 +11,7 @@ import Combine
 
 public class NetworkManagerMovie: ObservableObject {
 
-    @Published public var movieDetails: Movie = Movie(
+    @Published public var movieDetails: Movie = Movie( // swiftlint:disable:this redundant_type_annotation
         adult: false,
         backdropPath: "",
         belongsToCollection: nil,
@@ -60,7 +60,7 @@ public class NetworkManagerMovie: ObservableObject {
                 return
             }
 
-            let decoder: JSONDecoder = JSONDecoder()
+            let decoder: JSONDecoder = JSONDecoder() // swiftlint:disable:this redundant_type_annotation
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 
             do {

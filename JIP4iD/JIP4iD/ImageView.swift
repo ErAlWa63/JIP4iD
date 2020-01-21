@@ -12,7 +12,7 @@ public struct ImageView: View {
 
     @ObservedObject private var imageLoader: ImageLoader
 
-    @State private var image: UIImage = UIImage()
+    @State private var image: UIImage = UIImage() // swiftlint:disable:this redundant_type_annotation
 
     public init(withURL url: String) {
 

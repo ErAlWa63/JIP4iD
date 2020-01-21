@@ -11,7 +11,7 @@ import WebKit
 
 public struct TrailerView: View {
 
-    @ObservedObject private var webViewStore: WebViewStore = WebViewStore()
+    @ObservedObject private var webViewStore: WebViewStore = WebViewStore() // swiftlint:disable:this redundant_type_annotation
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
 
     public var key: String
