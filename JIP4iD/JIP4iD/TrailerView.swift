@@ -23,7 +23,11 @@ public struct TrailerView: View {
                 Spacer()
             }
             .navigationBarTitle(Text(""), displayMode: .inline)
-            .navigationBarItems(trailing: Button(action: { self.presentationMode.wrappedValue.dismiss() }) { Text("Done") })
+            .navigationBarItems(trailing: Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) { //swiftlint:disable:this multiple_closures_with_trailing_closure
+                Text("Done")
+            })
         }
         .onAppear {
             self.webViewStore.webView.load(URLRequest(url: URL(string: "https://www.youtube.com/embed/\(self.key)")!)) // swiftlint:disable:this force_unwrapping

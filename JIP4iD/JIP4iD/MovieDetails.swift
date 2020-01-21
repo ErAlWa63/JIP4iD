@@ -77,7 +77,7 @@ public struct MovieDetails: View {
     }
 
     private func movieButtonTrailer(_ proxy: GeometryProxy, _ isLandscape: Bool, _ videoCount: Int ) -> some View {
-        Button(action: { self.showingDetail.toggle() }) {
+        Button(action: { self.showingDetail.toggle() }) { // swiftlint:disable:this multiple_closures_with_trailing_closure
             if videoCount == 0 {
                 Text("No Trailer")
             } else {
