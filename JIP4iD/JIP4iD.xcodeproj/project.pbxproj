@@ -28,7 +28,7 @@
 		71CEA1A023C4F33700F75B52 /* NetworkManagerMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEA19F23C4F33700F75B52 /* NetworkManagerMovie.swift */; };
 		71CEA1A223C5C76F00F75B52 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEA1A123C5C76F00F75B52 /* Movie.swift */; };
 		71CEA1A423C64B6D00F75B52 /* WebViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEA1A323C64B6C00F75B52 /* WebViewStore.swift */; };
-		71CEA1A623C6504600F75B52 /* UIViewControlllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEA1A523C6504600F75B52 /* UIViewControlllerView.swift */; };
+		71CEA1A623C6504600F75B52 /* UIViewContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEA1A523C6504600F75B52 /* UIViewContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +76,7 @@
 		71CEA19F23C4F33700F75B52 /* NetworkManagerMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMovie.swift; sourceTree = "<group>"; };
 		71CEA1A123C5C76F00F75B52 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		71CEA1A323C64B6C00F75B52 /* WebViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewStore.swift; sourceTree = "<group>"; };
-		71CEA1A523C6504600F75B52 /* UIViewControlllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControlllerView.swift; sourceTree = "<group>"; };
+		71CEA1A523C6504600F75B52 /* UIViewContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +143,7 @@
 				71CEA18D23C3AD5C00F75B52 /* TrailerView.swift */,
 				71CEA1A323C64B6C00F75B52 /* WebViewStore.swift */,
 				71CEA18B23C3713500F75B52 /* WebView.swift */,
-				71CEA1A523C6504600F75B52 /* UIViewControlllerView.swift */,
+				71CEA1A523C6504600F75B52 /* UIViewContainerView.swift */,
 				71CEA18F23C3B28000F75B52 /* MoviePopular.swift */,
 				71CEA1A123C5C76F00F75B52 /* Movie.swift */,
 				71CEA19D23C4AE6300F75B52 /* MovieDetails.swift */,
@@ -354,7 +354,7 @@
 				71CEA15B23C3565800F75B52 /* SceneDelegate.swift in Sources */,
 				71CEA1A223C5C76F00F75B52 /* Movie.swift in Sources */,
 				71CEA19E23C4AE6300F75B52 /* MovieDetails.swift in Sources */,
-				71CEA1A623C6504600F75B52 /* UIViewControlllerView.swift in Sources */,
+				71CEA1A623C6504600F75B52 /* UIViewContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
