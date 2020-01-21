@@ -38,8 +38,14 @@ public struct MovieCatalogView: View {
 
     private func defaultMinListRowHeight() -> CGFloat {
         let isLandscape: Bool = UIScreen.main.bounds.width > UIScreen.main.bounds.height
+        guard let localHorizontalSizeClass: UserInterfaceSizeClass = horizontalSizeClass else {
+            return 0
+        }
+        guard let localVerticalSizeClass: UserInterfaceSizeClass = verticalSizeClass else {
+            return 0
+        }
 
-        switch (horizontalSizeClass, verticalSizeClass, isLandscape) {
+        switch (localHorizontalSizeClass, localVerticalSizeClass, isLandscape) {
         case (.compact, .regular, false):
             return UIScreen.main.bounds.height * 0.12
         case (.regular, .regular, false):
