@@ -43,19 +43,19 @@ public struct Movie: Codable {
 
     public struct Videos: Codable {
 
-        public struct Results: Codable {
-
-            public let id: String
-            public let iso6391: String
-            public let iso31661: String
-            public let key: String
-            public let name: String
-            public let site: String
-            public let size: Int
-            public let type: String
-        }
-
         public let results: [Results]
+    }
+
+    public struct Results: Codable {
+
+        public let id: String
+        public let iso6391: String
+        public let iso31661: String
+        public let key: String
+        public let name: String
+        public let site: String
+        public let size: Int
+        public let type: String
     }
 
     public let adult: Bool
