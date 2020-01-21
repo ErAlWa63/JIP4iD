@@ -6,8 +6,8 @@
 //  Copyright © 2020 Erik Waterham. All rights reserved.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 public class ImageLoader: ObservableObject {
 

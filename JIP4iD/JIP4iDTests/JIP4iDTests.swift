@@ -6,8 +6,8 @@
 //  Copyright © 2020 Erik Waterham. All rights reserved.
 //
 
-import XCTest
 @testable import JIP4iD
+import XCTest
 
 private class JIP4iDTests: XCTestCase {
 
