@@ -40,13 +40,20 @@ public struct MovieCatalogView: View {
         let isLandscape: Bool = UIScreen.main.bounds.width > UIScreen.main.bounds.height
 
         switch (horizontalSizeClass, verticalSizeClass, isLandscape) {
-        case (.compact, .regular, false): return UIScreen.main.bounds.height * 0.12
-        case (.regular, .regular, false): return UIScreen.main.bounds.height * 0.12
-        case (.compact, .compact, true): return UIScreen.main.bounds.height * 0.35
-        case (.compact, .regular, true): return UIScreen.main.bounds.height * 0.15
-        case (.regular, .compact, true): return UIScreen.main.bounds.height * 0.2
-        case (.regular, .regular, true): return UIScreen.main.bounds.height * 0.12
-        default: return 0
+        case (.compact, .regular, false):
+            return UIScreen.main.bounds.height * 0.12
+        case (.regular, .regular, false):
+            return UIScreen.main.bounds.height * 0.12
+        case (.compact, .compact, true):
+            return UIScreen.main.bounds.height * 0.35
+        case (.compact, .regular, true):
+            return UIScreen.main.bounds.height * 0.15
+        case (.regular, .compact, true):
+            return UIScreen.main.bounds.height * 0.2
+        case (.regular, .regular, true):
+            return UIScreen.main.bounds.height * 0.12
+        default:
+            return 0
         }
     }
 
