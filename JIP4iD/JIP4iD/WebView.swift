@@ -45,6 +45,6 @@ public struct WebView: UIViewRepresentable {
 private struct WebKitView_Previews: PreviewProvider {
 
     static var previews: some View {
-        WebView(url: URL(string: "...")!)
+        WebView(url: URL(string: "...")!) // swiftlint:disable:this force_unwrapping
     }
 }
