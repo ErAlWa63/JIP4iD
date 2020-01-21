@@ -11,8 +11,8 @@ import WebKit
 
 public struct TrailerView: View {
 
-    @ObservedObject private var webViewStore = WebViewStore()
-    @Environment(\.presentationMode) private var presentationMode
+    @ObservedObject private var webViewStore: WebViewStore = WebViewStore()
+    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
 
     public var key: String
 
