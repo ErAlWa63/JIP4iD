@@ -16,14 +16,6 @@ public struct MoviePosterView: View {
     public var body: some View {
         ImageView(withURL: url)
             .frame(width: geo.size.width / 2, height: geo.size.height)
-//            .aspectRatio(contentMode: .fit)
-    }
-
-    private func movieTitle( _ title: String) -> some View {
-        Text(title)
-            .font(.headline)
-            .lineLimit(nil)
-            .multilineTextAlignment(.leading)
     }
 }
 
