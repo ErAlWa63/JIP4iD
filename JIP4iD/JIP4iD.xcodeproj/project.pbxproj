@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		715D539F23D7AF8200BA6B90 /* String+dottedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D539E23D7AF8200BA6B90 /* String+dottedDate.swift */; };
+		715D53A423D82DA600BA6B90 /* FirstScreenMovieCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D53A323D82DA600BA6B90 /* FirstScreenMovieCatalogView.swift */; };
+		715D53A623D82DC000BA6B90 /* SecondScreenMovieCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715D53A523D82DC000BA6B90 /* SecondScreenMovieCatalog.swift */; };
 		71B8058A23C7235F00554115 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B8058923C7235F00554115 /* ImageLoader.swift */; };
 		71B8058C23C723C900554115 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B8058B23C723C900554115 /* ImageView.swift */; };
 		71B8059123CDB30700554115 /* MovieCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B8059023CDB30700554115 /* MovieCatalogView.swift */; };
@@ -51,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		715D539E23D7AF8200BA6B90 /* String+dottedDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+dottedDate.swift"; sourceTree = "<group>"; };
+		715D53A323D82DA600BA6B90 /* FirstScreenMovieCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenMovieCatalogView.swift; sourceTree = "<group>"; };
+		715D53A523D82DC000BA6B90 /* SecondScreenMovieCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenMovieCatalog.swift; sourceTree = "<group>"; };
 		71B8058923C7235F00554115 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		71B8058B23C723C900554115 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		71B8059023CDB30700554115 /* MovieCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCatalogView.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 			children = (
 				71B8059023CDB30700554115 /* MovieCatalogView.swift */,
 				71B8059223CDB4B300554115 /* NoDataAvailableView.swift */,
+				715D53A323D82DA600BA6B90 /* FirstScreenMovieCatalogView.swift */,
+				715D53A523D82DC000BA6B90 /* SecondScreenMovieCatalog.swift */,
 			);
 			path = MovieCatalog;
 			sourceTree = "<group>";
@@ -353,7 +359,9 @@
 				71B8058A23C7235F00554115 /* ImageLoader.swift in Sources */,
 				71CEA15E23C3565800F75B52 /* JIP4iD.xcdatamodeld in Sources */,
 				71CEA1A023C4F33700F75B52 /* NetworkManagerMovie.swift in Sources */,
+				715D53A623D82DC000BA6B90 /* SecondScreenMovieCatalog.swift in Sources */,
 				71CEA19823C4958F00F75B52 /* NetworkManagerMoviePopular.swift in Sources */,
+				715D53A423D82DA600BA6B90 /* FirstScreenMovieCatalogView.swift in Sources */,
 				71CEA1A423C64B6D00F75B52 /* WebViewStore.swift in Sources */,
 				71CEA18C23C3713500F75B52 /* WebView.swift in Sources */,
 				71B8059123CDB30700554115 /* MovieCatalogView.swift in Sources */,
