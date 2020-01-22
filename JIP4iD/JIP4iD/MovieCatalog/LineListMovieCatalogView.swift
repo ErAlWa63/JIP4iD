@@ -15,29 +15,8 @@ public struct LineListMovieCatalogView: View {
 
     public var body: some View {
         GeometryReader { geo in
-            self.movieLineItems(geo, self.url, self.title)
+            ItemsLineListMovieCatalogView(geo: geo, url: self.url, title: self.title)
         }
-    }
-
-    private func movieLineItems(_ proxy: GeometryProxy, _ url: String, _ title: String) -> some View {
-        HStack(alignment: .center) {
-            self.moviePoster(proxy, url)
-            self.movieTitle(title)
-            Spacer()
-        }
-    }
-
-    private func moviePoster(_ proxy: GeometryProxy, _ url: String ) -> some View {
-        ImageView(withURL: url)
-            .frame(width: proxy.size.width / 2, height: proxy.size.height)
-            .aspectRatio(contentMode: .fit)
-    }
-
-    private func movieTitle( _ title: String) -> some View {
-        Text(title)
-            .font(.headline)
-            .lineLimit(nil)
-            .multilineTextAlignment(.leading)
     }
 }
 
