@@ -1,5 +1,5 @@
 //
-//  ItemsLineListMovieCatalogView.swift
+//  MoviePosterView.swift
 //  JIP4iD
 //
 //  Created by Erik Waterham on 22/01/2020.
@@ -8,18 +8,15 @@
 
 import SwiftUI
 
-public struct ItemsLineListMovieCatalogView: View {
+public struct MoviePosterView: View {
 
     public var geo: GeometryProxy
     public var url: String
-    public var title: String
 
     public var body: some View {
-        HStack(alignment: .center) {
-            MoviePosterView(geo: geo, url: url)
-            self.movieTitle(title)
-            Spacer()
-        }
+        ImageView(withURL: url)
+            .frame(width: geo.size.width / 2, height: geo.size.height)
+//            .aspectRatio(contentMode: .fit)
     }
 
     private func movieTitle( _ title: String) -> some View {
@@ -28,12 +25,11 @@ public struct ItemsLineListMovieCatalogView: View {
             .lineLimit(nil)
             .multilineTextAlignment(.leading)
     }
-
 }
 
 // swiftlint:disable comments_space comments_capitalized_find_possible_code
-//struct ItemsLineListMovieCatalogView_Previews: PreviewProvider {
+//struct MoviePosterView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ItemsLineListMovieCatalogView(geo: GeometryProxy(), url: "", title: "title")
+//        MoviePosterView()
 //    }
 //}
