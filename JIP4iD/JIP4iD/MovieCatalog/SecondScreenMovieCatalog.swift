@@ -11,8 +11,7 @@ import SwiftUI
 public struct SecondScreenMovieCatalog: View {
 
     public var body: some View {
-        Text("No movie selected.")
-            .font(.title)
+        WarningView(text: "No movie selected")
     }
 }
 

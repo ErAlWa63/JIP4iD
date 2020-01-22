@@ -17,7 +17,7 @@ public struct FirstScreenMovieCatalogView: View {
     public var body: some View {
         VStack {
             if networkManager.loading {
-                NoDataAvailableView()
+                WarningView(text: "Loading movies")
             } else {
                 List(networkManager.movies.results) { movie in
                     NavigationLink(destination: MovieDetails(id: movie.id)) {
