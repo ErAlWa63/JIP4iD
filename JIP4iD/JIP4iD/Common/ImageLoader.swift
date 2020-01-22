@@ -6,18 +6,11 @@
 //  Copyright © 2020 Erik Waterham. All rights reserved.
 //
 
-import Combine
 import SwiftUI
 
 public class ImageLoader: ObservableObject {
 
-    public var dataPublisher: PassthroughSubject = PassthroughSubject<Data, Never>() // swiftlint:disable:this unnecessary_type
-
-    private var data: Data = Data() { // swiftlint:disable:this redundant_type_annotation unnecessary_type
-        didSet {
-            dataPublisher.send(data)
-        }
-    }
+    @Published public var data: Data?
 
     public init(urlString: String) {
 
@@ -25,7 +18,7 @@ public class ImageLoader: ObservableObject {
             return
         }
 
-        let task: URLSessionDataTask = URLSession.shared.dataTask(with: url) { data, _, _ in
+        let task = URLSession.shared.dataTask(with: url) { data, _, _ in // swiftlint:disable:this explicit_type_interface
             guard let data = data else {
                 return
             }

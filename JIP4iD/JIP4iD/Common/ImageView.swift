@@ -12,8 +12,6 @@ public struct ImageView: View {
 
     @ObservedObject private var imageLoader: ImageLoader
 
-    @State private var image: UIImage = UIImage() // swiftlint:disable:this redundant_type_annotation unnecessary_type
-
     public init(withURL url: String) {
 
         imageLoader = ImageLoader(urlString: url)
@@ -21,11 +19,22 @@ public struct ImageView: View {
 
     public var body: some View {
         VStack {
-            Image(uiImage: self.image)
-                .resizable()
-        }.onReceive(self.imageLoader.dataPublisher) { data in
-            self.image = UIImage(data: data) ?? UIImage()
+            Image(uiImage: getImage())
+            .resizable()
         }
+    }
+
+    private func getImage() -> UIImage {
+
+        guard let data = imageLoader.data else {
+            return UIImage()
+        }
+
+        guard let uiImage = UIImage(data: data) else {
+            return UIImage()
+        }
+
+        return uiImage
     }
 }
 

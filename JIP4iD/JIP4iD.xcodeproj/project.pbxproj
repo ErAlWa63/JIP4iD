@@ -123,6 +123,8 @@
 			children = (
 				715D539E23D7AF8200BA6B90 /* String+dottedDate.swift */,
 				717A723F23D84711002CA901 /* WarningView.swift */,
+				71B8058B23C723C900554115 /* ImageView.swift */,
+				71B8058923C7235F00554115 /* ImageLoader.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -177,8 +179,6 @@
 				71CEA1A123C5C76F00F75B52 /* Movie.swift */,
 				71CEA19D23C4AE6300F75B52 /* MovieDetails.swift */,
 				71CEA19723C4958F00F75B52 /* NetworkManagerMoviePopular.swift */,
-				71B8058923C7235F00554115 /* ImageLoader.swift */,
-				71B8058B23C723C900554115 /* ImageView.swift */,
 				71CEA19F23C4F33700F75B52 /* NetworkManagerMovie.swift */,
 				71CEA16123C3565900F75B52 /* Assets.xcassets */,
 				71CEA16623C3565900F75B52 /* LaunchScreen.storyboard */,
