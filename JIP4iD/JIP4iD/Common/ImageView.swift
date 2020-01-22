@@ -18,10 +18,8 @@ public struct ImageView: View {
     }
 
     public var body: some View {
-        VStack {
-            Image(uiImage: getImage())
+        Image(uiImage: getImage())
             .resizable()
-        }
     }
 
     private func getImage() -> UIImage {
