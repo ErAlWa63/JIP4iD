@@ -1,11 +1,3 @@
-//
-//  UIViewContainerView.swift
-//  JIP4iD
-//
-//  Created by Erik Waterham on 08/01/2020.
-//  Copyright © 2020 Erik Waterham. All rights reserved.
-//
-
 import SwiftUI
 
 public class UIViewContainerView<ContentView: UIView>: UIView {
