@@ -17,13 +17,7 @@ public struct ImageView: View {
         imageLoader = ImageLoader(urlString: url)
     }
 
-    public var body: some View {
-        Image(uiImage: getImage())
-            .resizable()
-    }
-
-    private func getImage() -> UIImage {
-
+    private var uiImage: UIImage {
         guard let data = imageLoader.data else {
             return UIImage()
         }
@@ -33,6 +27,11 @@ public struct ImageView: View {
         }
 
         return uiImage
+    }
+
+    public var body: some View {
+        Image(uiImage: uiImage)
+            .resizable()
     }
 }
 

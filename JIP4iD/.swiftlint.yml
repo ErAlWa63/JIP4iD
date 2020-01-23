@@ -151,14 +151,14 @@ opt_in_rules:
   - yoda_condition
 
 file_header:
-  required_pattern: |
-                    \/\/
-                    \/\/  .*?\.swift
-                    \/\/  .*?
-                    \/\/
-                    \/\/  Created by .*? on \d{1,2}\/\d{1,2}\/\d{4}\.
-                    \/\/  Copyright © \d{4} Erik Waterham\. All rights reserved\.
-                    \/\/
+  forbidden_pattern: |
+                     \/\/
+                     \/\/  .*?\.swift
+                     \/\/  .*?
+                     \/\/
+                     \/\/  Created by .*? on \d{1,2}\/\d{1,2}\/\d{4}\.
+                     \/\/  Copyright © \d{4} Erik Waterham\. All rights reserved\.
+                     \/\/
 custom_rules:
   empty_first_line: # https://github.com/brandenr/swiftlintconfig/blob/master/.swiftlint.yml
     name: "Empty First Line"
