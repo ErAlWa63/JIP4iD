@@ -1,3 +1,11 @@
+//
+//  Movie.swift
+//  JIP4iD
+//
+//  Created by Erik Waterham on 08/01/2020.
+//  Copyright © 2020 Erik Waterham. All rights reserved.
+//
+
 public struct Movie: Codable {
 
     public struct BelongsToCollection: Codable, Identifiable {
