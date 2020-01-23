@@ -1,11 +1,3 @@
-//
-//  MovieCatalogView.swift
-//  JIP4iD
-//
-//  Created by Erik Waterham on 14/01/2020.
-//  Copyright © 2020 Erik Waterham. All rights reserved.
-//
-
 import SwiftUI
 
 public struct MovieCatalogView: View {
