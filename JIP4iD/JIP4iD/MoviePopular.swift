@@ -1,11 +1,3 @@
-//
-//  MoviePopular.swift
-//  JIP4iD
-//
-//  Created by Erik Waterham on 06/01/2020.
-//  Copyright © 2020 Erik Waterham. All rights reserved.
-//
-
 public struct MoviePopular: Codable {
 
     public struct Results: Codable, Identifiable {
