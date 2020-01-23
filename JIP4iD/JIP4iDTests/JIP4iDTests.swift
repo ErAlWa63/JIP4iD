@@ -1,11 +1,3 @@
-//
-//  JIP4iDTests.swift
-//  JIP4iDTests
-//
-//  Created by Erik Waterham on 06/01/2020.
-//  Copyright © 2020 Erik Waterham. All rights reserved.
-//
-
 @testable import JIP4iD
 import XCTest
 
