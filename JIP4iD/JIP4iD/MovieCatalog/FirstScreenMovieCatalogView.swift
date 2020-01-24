@@ -9,7 +9,9 @@ public struct FirstScreenMovieCatalogView: View {
             if networkManager.loading {
                 WarningView(text: "Loading movies")
             } else {
-                ListMovieCatalogView()
+                GeometryReader { geo in
+                    ListMovieCatalogView(geo: geo)
+                }
             }
         }
     }

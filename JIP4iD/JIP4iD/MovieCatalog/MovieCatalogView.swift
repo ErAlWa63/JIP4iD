@@ -9,6 +9,7 @@ public struct MovieCatalogView: View {
 
             SecondScreenMovieCatalog()
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

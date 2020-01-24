@@ -2,9 +2,14 @@ import SwiftUI
 
 public struct ListMovieCatalogView: View {
 
+    public var geo: GeometryProxy
+
     @ObservedObject private var networkManager: NetworkManagerMoviePopular = NetworkManagerMoviePopular() // swiftlint:disable:this redundant_type_annotation unnecessary_type
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass // swiftlint:disable:this explicit_type_interface
-    @Environment(\.verticalSizeClass) private var verticalSizeClass // swiftlint:disable:this explicit_type_interface
+
+    private var defaultMinListRowHeight: CGFloat {
+
+        geo.size.width * 0.28
+    }
 
     public var body: some View {
         List(networkManager.movies.results) { movie in
@@ -12,40 +17,13 @@ public struct ListMovieCatalogView: View {
                 LineListMovieCatalogView(url: "https://image.tmdb.org/t/p/w500\(movie.backdropPath)", title: movie.title)
             }
         }
-        .environment(\.defaultMinListRowHeight, UIScreen.main.bounds.width * 0.275)
-    }
-
-    private func defaultMinListRowHeight() -> CGFloat {
-        let isLandscape: Bool = UIScreen.main.bounds.width > UIScreen.main.bounds.height
-        guard let localHorizontalSizeClass: UserInterfaceSizeClass = horizontalSizeClass else {
-            return 0
-        }
-        guard let localVerticalSizeClass: UserInterfaceSizeClass = verticalSizeClass else {
-            return 0
-        }
-
-        switch (localHorizontalSizeClass, localVerticalSizeClass, isLandscape) {
-        case (.compact, .regular, false):
-            return UIScreen.main.bounds.height * 0.12
-        case (.regular, .regular, false):
-            return UIScreen.main.bounds.height * 0.12
-        case (.compact, .compact, true):
-            return UIScreen.main.bounds.height * 0.35
-        case (.compact, .regular, true):
-            return UIScreen.main.bounds.height * 0.15
-        case (.regular, .compact, true):
-            return UIScreen.main.bounds.height * 0.2
-        case (.regular, .regular, true):
-            return UIScreen.main.bounds.height * 0.12
-        default:
-            return 0
-        }
-    }
-
-}
-
-private struct ListMovieCatalogView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListMovieCatalogView()
+        .environment(\.defaultMinListRowHeight, defaultMinListRowHeight)
     }
 }
+
+// swiftlint:disable comments_space comments_capitalized_find_possible_code
+//private struct ListMovieCatalogView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListMovieCatalogView(geo: geo)
+//    }
+//}

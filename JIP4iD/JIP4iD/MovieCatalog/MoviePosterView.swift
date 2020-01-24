@@ -7,7 +7,7 @@ public struct MoviePosterView: View {
 
     public var body: some View {
         ImageView(withURL: url)
-            .frame(width: geo.size.width / 2, height: geo.size.height)
+            .frame(width: geo.size.width * 0.48, height: geo.size.height)
     }
 }
 
