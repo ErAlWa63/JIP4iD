@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct MovieDetails: View {
+public struct MovieDetailsView: View {
 
     @ObservedObject private var networkManager: NetworkManagerMovie = NetworkManagerMovie() // swiftlint:disable:this redundant_type_annotation unnecessary_type
     @State private var showingDetail: Bool = false

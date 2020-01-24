@@ -13,7 +13,7 @@ public struct ListMovieCatalogView: View {
 
     public var body: some View {
         List(networkManager.movies.results) { movie in
-            NavigationLink(destination: MovieDetails(id: movie.id)) {
+            NavigationLink(destination: MovieDetailsView(id: movie.id)) {
                 LineListMovieCatalogView(url: "https://image.tmdb.org/t/p/w500\(movie.backdropPath)", title: movie.title)
             }
         }
