@@ -9,18 +9,10 @@ public struct ItemsLineListMovieCatalogView: View {
     public var body: some View {
         HStack(alignment: .center) {
             MoviePosterView(geo: geo, url: url)
-            self.movieTitle(title)
+            MovieTitleView(title: title)
             Spacer()
         }
     }
-
-    private func movieTitle( _ title: String) -> some View {
-        Text(title)
-            .font(.headline)
-            .lineLimit(nil)
-            .multilineTextAlignment(.leading)
-    }
-
 }
 
 // swiftlint:disable comments_space comments_capitalized_find_possible_code

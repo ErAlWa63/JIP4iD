@@ -7,7 +7,7 @@ public struct FirstScreenMovieCatalogView: View {
     public var body: some View {
         VStack {
             if networkManager.loading {
-                WarningView(text: "Loading movies")
+                WarningView(text: "Loading: Movie Catalog")
             } else {
                 GeometryReader { geo in
                     ListMovieCatalogView(geo: geo)

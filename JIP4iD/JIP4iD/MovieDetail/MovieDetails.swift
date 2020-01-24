@@ -10,7 +10,7 @@ public struct MovieDetails: View {
     public var body: some View {
         VStack {
             if networkManager.loadingMovie {
-                Text("Loading...")
+                WarningView(text: "Loading: Movie Detail")
             } else {
                 if isLandscape() {
                     GeometryReader { geo in
