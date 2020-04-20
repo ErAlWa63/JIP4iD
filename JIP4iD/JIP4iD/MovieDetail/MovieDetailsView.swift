@@ -17,7 +17,10 @@ public struct MovieDetailsView: View {
                         VStack {
                             HStack {
                                 VStack {
-                                    self.moviePoster(geo, self.isLandscape(), "https://image.tmdb.org/t/p/w500\(self.networkManager.movieDetails.backdropPath)")
+                                    VStack {
+                                        MovieDetailsPosterView(width: geo.size.width / 2, height: geo.size.height,  url: "https://image.tmdb.org/t/p/w500\(self.networkManager.movieDetails.posterPath)")
+//                                    self.moviePoster(geo, self.isLandscape(), "https://image.tmdb.org/t/p/w500\(self.networkManager.movieDetails.posterPath)")
+                                    }
                                     VStack {
                                         self.movieGenres()
                                         self.movieReleaseDate()

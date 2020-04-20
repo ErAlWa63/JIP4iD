@@ -8,7 +8,7 @@ public struct MoviePopular: Codable {
         public let posterPath: String
         public let id: Int
         public let adult: Bool
-        public let backdropPath: String
+        public let backdropPath: String?
         public let originalLanguage: String
         public let originalTitle: String
         public let genreIds: [Int]

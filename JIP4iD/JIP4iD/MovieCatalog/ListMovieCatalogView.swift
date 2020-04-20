@@ -14,7 +14,7 @@ public struct ListMovieCatalogView: View {
     public var body: some View {
         List(networkManager.movies.results) { movie in
             NavigationLink(destination: MovieDetailsView(id: movie.id)) {
-                LineListMovieCatalogView(url: "https://image.tmdb.org/t/p/w500\(movie.backdropPath)", title: movie.title)
+                LineListMovieCatalogView(url: "https://image.tmdb.org/t/p/w500\(movie.posterPath)", title: movie.title)
             }
         }
         .environment(\.defaultMinListRowHeight, defaultMinListRowHeight)

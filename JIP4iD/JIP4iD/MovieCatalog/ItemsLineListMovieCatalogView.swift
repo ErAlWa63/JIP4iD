@@ -8,7 +8,7 @@ public struct ItemsLineListMovieCatalogView: View {
 
     public var body: some View {
         HStack(alignment: .center) {
-            MoviePosterView(geo: geo, url: url)
+            MovieCatalogPosterView(geo: geo, url: url)
             MovieTitleView(title: title)
             Spacer()
         }
