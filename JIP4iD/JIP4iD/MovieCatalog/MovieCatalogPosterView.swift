@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct MoviePosterView: View {
+public struct MovieCatalogPosterView: View {
 
     public var geo: GeometryProxy
     public var url: String
