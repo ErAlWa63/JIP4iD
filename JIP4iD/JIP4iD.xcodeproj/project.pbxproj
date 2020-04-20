@@ -18,6 +18,17 @@
 			name = "Periphery (Unused code)";
 			productName = "Periphery (Unused code)";
 		};
+		71A983BE244D98930022F537 /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 71A983BF244D98930022F537 /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+				71A983C2244D98BC0022F537 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+			productName = SwiftLint;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -253,7 +264,6 @@
 				71CEA15123C3565800F75B52 /* Sources */,
 				71CEA15223C3565800F75B52 /* Frameworks */,
 				71CEA15323C3565800F75B52 /* Resources */,
-				71B8059423CDFE0C00554115 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -313,6 +323,9 @@
 					71A983B9244C7CFE0022F537 = {
 						CreatedOnToolsVersion = 11.4;
 					};
+					71A983BE244D98930022F537 = {
+						CreatedOnToolsVersion = 11.4;
+					};
 					71CEA15423C3565800F75B52 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -343,6 +356,7 @@
 				71CEA16D23C3565900F75B52 /* JIP4iDTests */,
 				71CEA17823C3565900F75B52 /* JIP4iDUITests */,
 				71A983B9244C7CFE0022F537 /* Periphery (Unused code) */,
+				71A983BE244D98930022F537 /* SwiftLint */,
 			);
 		};
 /* End PBXProject section */
@@ -392,7 +406,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nperiphery scan --aggressive --project JIP4iD.xcodeproj --schemes JIP4iD --targets JIP4iD --format xcode\n";
 		};
-		71B8059423CDFE0C00554115 /* ShellScript */ = {
+		71A983C2244D98BC0022F537 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -407,7 +421,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint >/dev/null; then\n  pwd\n#    swiftlint --config \"$SRCROOT/.swiftlint.yml\"\n    swiftlint > swiftlint.txt\n    cat swiftlint.txt | sed -e 's/warning/;warning/' | sort -t ';' -k 2 -k 1 | sed 's/;//'\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n  fi\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint >/dev/null; then\n  pwd\n#    swiftlint --config \"$SRCROOT/.swiftlint.yml\"\n    swiftlint > swiftlint.txt\n    cat swiftlint.txt | sed -e 's/warning/;warning/' | sort -t ';' -k 2 -k 1 | sed 's/;//'\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n  fi\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -498,6 +512,24 @@
 			name = Debug;
 		};
 		71A983BB244C7CFE0022F537 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 745K8L27Y4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		71A983C0244D98930022F537 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 745K8L27Y4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		71A983C1244D98930022F537 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -754,6 +786,15 @@
 			buildConfigurations = (
 				71A983BA244C7CFE0022F537 /* Debug */,
 				71A983BB244C7CFE0022F537 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71A983BF244D98930022F537 /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71A983C0244D98930022F537 /* Debug */,
+				71A983C1244D98930022F537 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
