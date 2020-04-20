@@ -1,11 +1,11 @@
 # JIP4iD
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Apple Swift-version 5.1 (swiftlang--1100.0.270.13 clang--1100.0.33.7)-brightgreen.svg" />
-    <img src="https://img.shields.io/badge/MacOS Catalina-10.15.3 beta 2 (19D62e)-blue.svg" />
-    <img src="https://img.shields.io/badge/Xcode-11.3.1 (19D62e)-brightgreen.svg" />
-    <img src="https://img.shields.io/badge/iOS-13.3.1 Beta 2 (17D5044a)-blue.svg" />
-    <img src="https://img.shields.io/badge/iPadOS-13.3.1 Beta 2 (17D5044a)-blue.svg" />
+    <img src="https://img.shields.io/badge/Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)-brightgreen.svg" />
+    <img src="https://img.shields.io/badge/macOS 10.15.5 beta 2  (19F62f)-blue.svg" />
+    <img src="https://img.shields.io/badge/Xcode 11.4 beta 2 (11N123k)-brightgreen.svg" />
+    <img src="https://img.shields.io/badge/iOS 13.4.5 beta 2 (17F5044d)-blue.svg" />
+    <img src="https://img.shields.io/badge/iPadOS 13.4.5 beta 2 (17F5044d)-blue.svg" />
 </p>
 
 
