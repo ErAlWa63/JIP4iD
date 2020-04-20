@@ -29,3 +29,4 @@
 - [ ] [How to build SwiftUI apps using VIPER?](https://theswiftdev.com/2019/09/18/how-to-build-swiftui-apps-using-viper/)
 - [ ] [Networking in SwiftUI](https://itnext.io/networking-in-swiftui-aa57ff0021)
 - [ ] [Building a state-driven app in SwiftUI using state machines](https://medium.com/eggs-design/building-a-state-driven-app-in-swiftui-using-state-machines-32379ca37283)
+- [ ] [Swift: Find Unused Code](https://medium.com/@port001/swift-find-unused-code-9cdf6b1f41ca)
